@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/white"
+        android:padding="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_admin"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                app:civ_border_color="#fff"
+                app:civ_border_width="2dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/hello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Hello, "
+                    android:textColor="@color/darkgrey"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/nameadmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="You !"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_mg_alumni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manajemen Alumni"
+        android:layout_margin="5dp"/>
+
+
+    <Button
+        android:id="@+id/btn_mg_informasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manajemen Informasi"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btn_adm_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keluar"
+        android:layout_margin="5dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

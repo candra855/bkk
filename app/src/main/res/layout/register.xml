@@ -1,0 +1,194 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Register">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/tambah_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="number"
+            android:hint="Nomor KTP"
+            android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/tambah_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:inputType="textPersonName"
+            android:hint="Nama Lengkap"
+            android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/tambah_tgl_lahir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:editable="false"
+            android:focusable="false"
+            android:layout_marginTop="0dp"
+            android:inputType="text|date"
+            android:hint="Tanggal Lahir"
+            android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/tambah_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/tambah_telepon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:inputType="number"
+            android:hint="Nomor Telepon"
+            android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Jenis Kelamin"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/tambah_jenis_kelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="0dp"
+            android:entries="@array/gender"
+            android:spinnerMode="dialog"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Jurusan"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/tambah_jurusan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="0dp"
+            android:entries="@array/department"
+            android:spinnerMode="dialog"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/tambah_tahun_lulus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:inputType="number"
+            android:hint="Tahun Lulus"
+            android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/tambah_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:textSize="16sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/costum_button"
+            android:text="DAFTAR"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

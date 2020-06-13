@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black"
+        android:title="Beranda" />
+
+    <item
+        android:id="@+id/application"
+        android:icon="@drawable/ic_get_app_black"
+        android:title="Lamaran" />
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_person_black"
+        android:title="Akun" />
+
+
+
+</menu>

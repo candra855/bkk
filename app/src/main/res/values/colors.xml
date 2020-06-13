@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#559e12</color>
+    <color name="colorPrimaryDark">#478110</color>
+    <!--<color name="colorPrimary">#62a425</color>-->
+    <!--<color name="colorPrimaryDark">#62a425</color>-->
+    <!--<color name="colorPrimary">#008577</color>-->
+    <!--<color name="colorPrimaryDark">#00574B</color>-->
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="darkgrey">#6c6c6c</color>
+    <color name="background">#fcfdfc</color>
+    <color name="profil">#93c169</color>
+
+</resources>

@@ -1,0 +1,317 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\9998c37f341d829822b9739f51b2bafd\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\314415e660efeec7cd71992e46c6a4f0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\961b30a2c124c692eaeac13ed0ecb6b0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\d5d135478edf5aee2a579bd992f2b80a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:2:1-14:12
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\35ef1df8a78723367a52b7f860dce88f\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\9034adf06dfd54352709268692a09a4e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\fe9c70d2894ab0eced8c847900e2cc2d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\636d9d6b56a9d68e1ded9caf752951d8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\d06b28c7029a57974ebc51ca19f537c9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\40799c70612ef821fa62365a639d8299\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\d511b6d196780c55cacbcfbcd90189aa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\36180bf43bc01688afe1c90e826e01f5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\4b209daaa7ae6b57c5ec641d8fa91beb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\81b9e26d843985a042f197b777cb679f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\ba2f34f32b7ee1051415d59c5281f808\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\3f181139109b3d62420b50bef2fdd729\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f357b37a292ff3a97ea93d5405fcf5ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\7d9c91a878be81aeaccc20d2073387cc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\abe69a0501beae3793463e2ebba0806d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\36a79e71b27413c16566f8435896c354\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\42f58fb3ab6bfb17912cc234c554538d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6f9b6eeb629e7362de0cbb1cdd69c4c8\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\3b4ef41c0fcc8a2601d9507fac51d8f6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\cd54481b52fd63c7b684c758cf06263f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\cd3918e5c0080483e26112461fd9a2d8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\dbe18180b4c0b3877409ef5169b7f556\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\6e45ab5da3b3ffad0df7cd5e724b5e52\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\8200e899fe9f45a7ed0b0c5d1b7ac9b4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ab880987a9a238770883cdf3e58416d7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\85f53d6c83bbcd3547fce359fe5fdafe\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\f8d684b492d27f9c56753cd30225e9a8\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\1f8780a11001165aa516d20421de351b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9747e6455da3b08a48b47305a515f158\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+	package
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:3:5-26
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:11:5-67
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:6:22-76
+application
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:8:5-78:19
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\9998c37f341d829822b9739f51b2bafd\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\9998c37f341d829822b9739f51b2bafd\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\961b30a2c124c692eaeac13ed0ecb6b0\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\961b30a2c124c692eaeac13ed0ecb6b0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\35ef1df8a78723367a52b7f860dce88f\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\35ef1df8a78723367a52b7f860dce88f\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6f9b6eeb629e7362de0cbb1cdd69c4c8\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6f9b6eeb629e7362de0cbb1cdd69c4c8\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:13:9-45
+	android:icon
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:11:9-40
+	android:allowBackup
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:15:9-40
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:9:9-49
+activity#id.coba.bkk.Login
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:16:9-22:20
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:16:19-40
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:20:27-74
+activity#id.coba.bkk.Register
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:23:9-25:38
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:25:13-35
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:24:13-37
+activity#id.coba.bkk.MainActivity
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:26:9-50
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:26:19-47
+activity#id.coba.bkk.UserProfil.DataPribadi
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:27:9-29:44
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:29:13-41
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:28:13-51
+activity#id.coba.bkk.UserProfil.GantiPassword
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:30:9-32:46
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:31:13-53
+activity#id.coba.bkk.Pendidikan.Pendidikan
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:33:9-35:50
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:35:13-47
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:34:13-50
+activity#id.coba.bkk.UserProfil.Nilai
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:36:9-38:37
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:38:13-34
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:37:13-45
+activity#id.coba.bkk.UserProfil.Tentang
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:39:9-41:39
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:41:13-36
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:40:13-47
+activity#id.coba.bkk.DetailLowongan
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:42:9-44:38
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:44:13-35
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:43:13-43
+activity#id.coba.bkk.Pekerjaan.Pekerjaan
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:45:9-47:49
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:47:13-46
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:46:13-48
+activity#id.coba.bkk.AdminActivity
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:48:9-50:37
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:50:13-34
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:49:13-42
+activity#id.coba.bkk.AdminMenu.MgInformasi
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:51:9-53:51
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:53:13-48
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:52:13-50
+activity#id.coba.bkk.AdminMenu.FormInformasi
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:54:9-56:48
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:56:13-45
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:55:13-52
+activity#id.coba.bkk.AdminMenu.MgAlumni
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:57:9-59:48
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:59:13-45
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:58:13-47
+activity#id.coba.bkk.AdminMenu.MgPelamar
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:60:9-62:49
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:62:13-46
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:61:13-48
+activity#id.coba.bkk.AdminMenu.FormUpInformasi
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:63:9-65:50
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:65:13-47
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:64:13-54
+activity#id.coba.bkk.Pendidikan.PendidikanTambah
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:66:9-68:49
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:68:13-46
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:67:13-56
+activity#id.coba.bkk.Pendidikan.PendidikanUbah
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:69:9-71:51
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:71:13-48
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:70:13-54
+activity#id.coba.bkk.Pekerjaan.PekerjaanTambah
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:72:9-74:49
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:74:13-46
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:73:13-54
+activity#id.coba.bkk.Pekerjaan.PekerjaanUbah
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:75:9-77:59
+	android:label
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:77:13-47
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:76:13-52
+uses-sdk
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\9998c37f341d829822b9739f51b2bafd\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\9998c37f341d829822b9739f51b2bafd\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\314415e660efeec7cd71992e46c6a4f0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\314415e660efeec7cd71992e46c6a4f0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\961b30a2c124c692eaeac13ed0ecb6b0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\961b30a2c124c692eaeac13ed0ecb6b0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\d5d135478edf5aee2a579bd992f2b80a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\d5d135478edf5aee2a579bd992f2b80a\AndroidManifest.xml:20:5-44
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:7:5-9:41
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:7:5-9:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\35ef1df8a78723367a52b7f860dce88f\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\35ef1df8a78723367a52b7f860dce88f\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\9034adf06dfd54352709268692a09a4e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\9034adf06dfd54352709268692a09a4e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\fe9c70d2894ab0eced8c847900e2cc2d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\fe9c70d2894ab0eced8c847900e2cc2d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\636d9d6b56a9d68e1ded9caf752951d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\636d9d6b56a9d68e1ded9caf752951d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\d06b28c7029a57974ebc51ca19f537c9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\d06b28c7029a57974ebc51ca19f537c9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\40799c70612ef821fa62365a639d8299\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\40799c70612ef821fa62365a639d8299\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\d511b6d196780c55cacbcfbcd90189aa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\d511b6d196780c55cacbcfbcd90189aa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\36180bf43bc01688afe1c90e826e01f5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\36180bf43bc01688afe1c90e826e01f5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\4b209daaa7ae6b57c5ec641d8fa91beb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\4b209daaa7ae6b57c5ec641d8fa91beb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\81b9e26d843985a042f197b777cb679f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\81b9e26d843985a042f197b777cb679f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\ba2f34f32b7ee1051415d59c5281f808\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\ba2f34f32b7ee1051415d59c5281f808\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\3f181139109b3d62420b50bef2fdd729\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\3f181139109b3d62420b50bef2fdd729\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f357b37a292ff3a97ea93d5405fcf5ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f357b37a292ff3a97ea93d5405fcf5ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\7d9c91a878be81aeaccc20d2073387cc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\7d9c91a878be81aeaccc20d2073387cc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\abe69a0501beae3793463e2ebba0806d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\abe69a0501beae3793463e2ebba0806d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\36a79e71b27413c16566f8435896c354\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\36a79e71b27413c16566f8435896c354\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\42f58fb3ab6bfb17912cc234c554538d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\42f58fb3ab6bfb17912cc234c554538d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6f9b6eeb629e7362de0cbb1cdd69c4c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6f9b6eeb629e7362de0cbb1cdd69c4c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\3b4ef41c0fcc8a2601d9507fac51d8f6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\3b4ef41c0fcc8a2601d9507fac51d8f6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\cd54481b52fd63c7b684c758cf06263f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\cd54481b52fd63c7b684c758cf06263f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\cd3918e5c0080483e26112461fd9a2d8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\cd3918e5c0080483e26112461fd9a2d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\dbe18180b4c0b3877409ef5169b7f556\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\dbe18180b4c0b3877409ef5169b7f556\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\6e45ab5da3b3ffad0df7cd5e724b5e52\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\6e45ab5da3b3ffad0df7cd5e724b5e52\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\8200e899fe9f45a7ed0b0c5d1b7ac9b4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\8200e899fe9f45a7ed0b0c5d1b7ac9b4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ab880987a9a238770883cdf3e58416d7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ab880987a9a238770883cdf3e58416d7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\85f53d6c83bbcd3547fce359fe5fdafe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\85f53d6c83bbcd3547fce359fe5fdafe\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\f8d684b492d27f9c56753cd30225e9a8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\f8d684b492d27f9c56753cd30225e9a8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\1f8780a11001165aa516d20421de351b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\1f8780a11001165aa516d20421de351b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9747e6455da3b08a48b47305a515f158\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9747e6455da3b08a48b47305a515f158\AndroidManifest.xml:20:5-44
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\ubah\bkk-master\app\src\main\AndroidManifest.xml:2:1-80:12 reason: com.daimajia.slider.library requested WRITE_EXTERNAL_STORAGE

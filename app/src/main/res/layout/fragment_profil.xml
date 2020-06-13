@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".ProfilFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/colorPrimary"
+            android:padding="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_user"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="2dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/hello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Hello, "
+                    android:textColor="@color/white"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/nameuser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="You !"
+                    android:textColor="@color/white"
+                    android:textSize="17dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/list_menu_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

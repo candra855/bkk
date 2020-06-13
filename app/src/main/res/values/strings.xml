@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BKK</string>
+
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_label1">Lowongan</string>
+    <string name="tab_label2">Perusahaan</string>
+
+    <string-array name="department">
+        <item>Pilih Program Keahlian</item>
+        <item>AKUNTANSI</item>
+        <item>MULTIMEDIA</item>
+        <item>PERHOTELAN</item>
+        <item>TEKNIK KOMPUTER DAN JARINGAN</item>
+        <item>TATA BOGA</item>
+        <item>TEKNIK SEPEDA MOTOR</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Pilih Jenis Kelamin</item>
+        <item>Laki - Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string name="tentang">
+        Aplikasi Bursa Kerja Khusus SMKN 1 Prigen bertujuan untuk membantu para alumni dalam mendapatkan informasi lowongan pekerjaan.
+    </string>
+
+</resources>
