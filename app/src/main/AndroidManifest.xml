@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.coba.bkk">
+    package="com.example.can.bkk_master">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,60 +21,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Register"
-            android:label="Daftar" />
-        <activity android:name=".MainActivity" />
-        <activity
-            android:name=".UserProfil.DataPribadi"
-            android:label="Data Pribadi" />
-        <activity
-            android:name=".UserProfil.GantiPassword"
-            android:label="Ganti Password" />
-        <activity
-            android:name=".Pendidikan.Pendidikan"
-            android:label="Riwayat Pendidikan" />
-        <activity
-            android:name=".UserProfil.Nilai"
-            android:label="Nilai" />
-        <activity
-            android:name=".UserProfil.Tentang"
-            android:label="Tentang" />
-        <activity
-            android:name=".DetailLowongan"
-            android:label="Detail" />
-        <activity
-            android:name=".Pekerjaan.Pekerjaan"
-            android:label="Riwayat Pekerjaan" />
-        <activity
-            android:name=".AdminActivity"
-            android:label="Admin" />
-        <activity
-            android:name=".AdminMenu.MgInformasi"
-            android:label="Manajemen Informasi" />
-        <activity
-            android:name=".AdminMenu.FormInformasi"
-            android:label="Tambah Informasi" />
-        <activity
-            android:name=".AdminMenu.MgAlumni"
-            android:label="Manajemen Alumni" />
-        <activity
-            android:name=".AdminMenu.MgPelamar"
-            android:label="Manajemen Pelamar" />
-        <activity
-            android:name=".AdminMenu.FormUpInformasi"
-            android:label="Perbarui Informasi" />
-        <activity
-            android:name=".Pendidikan.PendidikanTambah"
-            android:label="Tambah Pendidikan" />
-        <activity
-            android:name=".Pendidikan.PendidikanUbah"
-            android:label="Perbarui Pendidikan" />
-        <activity
-            android:name=".Pekerjaan.PekerjaanTambah"
-            android:label="Tambah Pendidikan" />
-        <activity
-            android:name=".Pekerjaan.PekerjaanUbah"
-            android:label="Perbarui Pekerjaan"></activity>
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DetailLowongan" />
+        <activity android:name=".Tentang" />
+        <activity android:name=".Profil" />
+        <activity android:name=".Register" />
+        <activity android:name=".DataPribadi" />
+        <activity android:name=".Pendidikan.Pendidikan" />
+        <activity android:name=".Pekerjaan.Pekerjaan" />
+        <activity android:name=".Pendidikan.PendidikanTambah" />
+        <activity android:name=".Pendidikan.PendidikanUbah" />
+        <activity android:name=".Pekerjaan.PekerjaanTambah" />
+        <activity android:name=".Pekerjaan.PekerjaanUbah"></activity>
     </application>
 
 </manifest>

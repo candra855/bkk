@@ -56,8 +56,6 @@ public class DataPribadi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data_pribadi);
 
-        editData(url);
-
         ubah_tgl_lahir = (EditText) findViewById(R.id.ubah_tgl_lahir);
         ubah_tgl_lahir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +81,7 @@ public class DataPribadi extends AppCompatActivity {
             }
         };
 
-
+        editData(url);
     }
 
     public void editData (String url)
@@ -103,6 +101,7 @@ public class DataPribadi extends AppCompatActivity {
         ubah_tinggi = (EditText) findViewById(R.id.ubah_tinggi);
         ubah_berat = (EditText) findViewById(R.id.ubah_berat);
         ubah_tv_tgl_lahir = (TextView) findViewById(R.id.ubah_tgl_lahir);
+
         ubah = (Button) findViewById(R.id.btn_ubah_users);
         ubah.setOnClickListener(new View.OnClickListener() {
             @Override

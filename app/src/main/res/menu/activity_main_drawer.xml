@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/beranda"
+            android:icon="@drawable/ic_home_black"
+            android:title="Beranda" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/lamaran"
+            android:icon="@drawable/ic_get_app_black"
+            android:title="Lamaran" />
+        <item
+            android:id="@+id/profil"
+            android:icon="@drawable/ic_account_circle_black"
+            android:title="Profil" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/tentang"
+                android:icon="@drawable/ic_info_outline_black"
+                android:title="Tentang Aplikasi" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_exit_to_app"
+                android:title="Keluar" />
+        </menu>
+    </item>
+
+</menu>
