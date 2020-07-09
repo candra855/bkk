@@ -28,15 +28,15 @@ import java.util.Map;
 
 public class PendidikanTambah extends AppCompatActivity {
 
-    private EditText tambah_user,tambah_tingkat,tambah_instansi,tambah_masuk,tambah_lulus;
+    private EditText tambah_tingkat,tambah_instansi,tambah_masuk,tambah_lulus;
     private Button simpan;
+    String id,idu,idn,idun;
 
     private String TAG = "tag";
     private String TAG_ID="id";
-
-    String id;
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
     private static String url = Server.URL + "pendidikan_tambah.php";
-
     private String TAG_SUCCESS = "success";
     public final static String TAG_MESSAGE = "message";
 
@@ -77,9 +77,13 @@ public class PendidikanTambah extends AppCompatActivity {
                     int code = Integer.parseInt(dataObj.getString("code"));
                     if (code == 1)
                     {
-                        final int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
+                        idu = getIntent().getStringExtra(TAG_ID);
+                        idun = getIntent().getStringExtra(TAG_NAMA);
+                        idn = getIntent().getStringExtra(TAG_USERNAME);
                         Intent intent = new Intent(PendidikanTambah.this,Pendidikan.class);
-                        intent.putExtra(TAG_ID, Integer.toString(extraId));
+                        intent.putExtra(TAG_ID, idu);
+                        intent.putExtra(TAG_USERNAME, idn);
+                        intent.putExtra(TAG_NAMA, idun);
                         startActivity(intent);
                     }else if(code == 0)
                     {

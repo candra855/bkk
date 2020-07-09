@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\314415e660efeec7cd71992e46c6a4f0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\d5d135478edf5aee2a579bd992f2b80a\AndroidManifest.xml:17:1-22:12
@@ -40,20 +40,20 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Can\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\f8d684b492d27f9c56753cd30225e9a8\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\1f8780a11001165aa516d20421de351b\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9747e6455da3b08a48b47305a515f158\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
 	package
 		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:11-69
@@ -67,8 +67,22 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
 		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:7:5-81
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:12:5-81
+MERGED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:8:22-77
+uses-permission#android.permission.CAMERA
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:9:22-62
 application
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:8:5-38:19
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:11:5-42:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\33e68418d20799725173e0720c2ef323\AndroidManifest.xml:22:5-20
 MERGED from [com.android.volley:volley:1.1.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\9998c37f341d829822b9739f51b2bafd\AndroidManifest.xml:9:5-20
@@ -84,85 +98,89 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Can\.gradl
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\9bd45e138f895d3288626e15ec29f853\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:15:9-41
 	android:roundIcon
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:13:9-45
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:16:9-45
 	android:icon
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:14:9-40
 	android:allowBackup
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:15:9-40
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:18:9-40
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:9:9-49
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:12:9-49
 activity#com.example.can.bkk_master.Login
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:16:9-22:20
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:19:9-25:20
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:16:19-40
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:19:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:23:27-74
 activity#com.example.can.bkk_master.MainActivity
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:23:9-26:59
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:26:9-29:59
 	android:label
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:25:13-45
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:28:13-45
 	android:theme
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:26:13-56
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:24:13-41
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:27:13-41
 activity#com.example.can.bkk_master.DetailLowongan
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:27:9-52
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:30:9-52
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:27:19-49
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:30:19-49
 activity#com.example.can.bkk_master.Tentang
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:28:9-45
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:31:9-45
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:28:19-42
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:31:19-42
 activity#com.example.can.bkk_master.Profil
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:29:9-44
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:32:9-44
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:29:19-41
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:32:19-41
 activity#com.example.can.bkk_master.Register
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:30:9-46
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:33:9-46
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:30:19-43
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:33:19-43
 activity#com.example.can.bkk_master.DataPribadi
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:31:9-49
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:34:9-49
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:31:19-46
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:34:19-46
 activity#com.example.can.bkk_master.Pendidikan.Pendidikan
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:32:9-59
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:35:9-59
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:32:19-56
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:35:19-56
 activity#com.example.can.bkk_master.Pekerjaan.Pekerjaan
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:33:9-57
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:36:9-57
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:33:19-54
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:36:19-54
 activity#com.example.can.bkk_master.Pendidikan.PendidikanTambah
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:34:9-65
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:37:9-65
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:34:19-62
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:37:19-62
 activity#com.example.can.bkk_master.Pendidikan.PendidikanUbah
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:35:9-63
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:38:9-63
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:35:19-60
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:38:19-60
 activity#com.example.can.bkk_master.Pekerjaan.PekerjaanTambah
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:36:9-63
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:39:9-63
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:36:19-60
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:39:19-60
 activity#com.example.can.bkk_master.Pekerjaan.PekerjaanUbah
-ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:37:9-70
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:40:9-61
 	android:name
-		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:37:19-58
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:40:19-58
+activity#com.example.can.bkk_master.DetailIndustri
+ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:41:9-61
+	android:name
+		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:41:19-49
 uses-sdk
 INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
@@ -249,9 +267,3 @@ INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\ne
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
 		ADDED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:12:5-81
-	android:name
-		ADDED from [com.daimajia.slider:library:1.1.5] C:\Users\Can\.gradle\caches\transforms-1\files-1.1\library-1.1.5.aar\6d88c1b70fcca95a4fd79a1adb08c022\AndroidManifest.xml:12:22-78
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step3 - Copy\bkk-master\app\src\main\AndroidManifest.xml:2:1-40:12 reason: com.daimajia.slider.library requested WRITE_EXTERNAL_STORAGE

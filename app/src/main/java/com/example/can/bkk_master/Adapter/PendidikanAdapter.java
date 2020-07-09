@@ -33,9 +33,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.can.bkk_master.Login.my_shared_preferences;
+import static com.example.can.bkk_master.Login.session_status;
+
 public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.ViewHolder>{
 
-    String id;
+    String id,username,nama;
     Context context;
     Activity activity;
 
@@ -44,6 +47,9 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
 
     public final String del = Server.URL +"pendidikan_hapus.php";
     public static final String TAG_ID = "id";
+    public static final String TAG_IDP = "idp";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
     public final static String TAG = "Pendidikan";
 
     ArrayList<HashMap<String ,String >> list_data;
@@ -64,7 +70,13 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-//        Picasso.with(context).load("http://smknprigen.sch.id/bkk/image/default.png").into(holder.imglist);
+        sharedpreferences = context.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
+
+
         holder.tingkat.setText(list_data.get(position).get("tingkat"));
         holder.instansi.setText(list_data.get(position).get("instansi"));
         holder.masuk.setText(list_data.get(position).get("masuk"));
@@ -72,8 +84,9 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String  id = list_data.get(position).get("id");
+                final String  idp = list_data.get(position).get("id_pendidikan");
                 final String  user_id = list_data.get(position).get("user_id");
+
                 final CharSequence[] options = { "Perbarui","Hapus" };
                 android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(context);
                 builder.setTitle("Pilihan");
@@ -83,7 +96,10 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
                         if (options[item].equals("Perbarui"))
                         {
                             Intent detail=new Intent(context,PendidikanUbah.class);
-                            detail.putExtra(TAG_ID,id);
+                            detail.putExtra(TAG_ID, id);
+                            detail.putExtra(TAG_IDP, idp);
+                            detail.putExtra(TAG_USERNAME, username);
+                            detail.putExtra(TAG_NAMA, nama);
                             context.startActivity(detail);
                         }
                         else if (options[item].equals("Hapus")) {
@@ -106,7 +122,9 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
                                                 if (dataObj.getString("message").equals("sukses")) {
 
                                                     Intent refresh=new Intent(context,Pendidikan.class);
-                                                    refresh.putExtra(TAG_ID, user_id);
+                                                    refresh.putExtra(TAG_ID, id);
+                                                    refresh.putExtra(TAG_USERNAME, username);
+                                                    refresh.putExtra(TAG_NAMA, nama);
                                                     context.startActivity(refresh);
 
                                                 } else if (dataObj.getString("message").equals("gagal")) {
@@ -135,7 +153,7 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
 //                        id = activity.getIntent().getStringExtra(TAG_ID);
 //                        sharedpreferences = context.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
                                             Map<String, String> map = new HashMap<String, String>();
-                                            map.put("id", id);
+                                            map.put("id_pendidikan", idp);
                                             return map;
                                         }
 

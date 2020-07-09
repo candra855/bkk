@@ -6,6 +6,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -42,6 +43,7 @@ import static com.example.can.bkk_master.Login.TAG_ID;
 
 public class Beranda extends Fragment {
 
+    SwipeRefreshLayout pullToRefresh;
     ProgressDialog pDialog;
     private RecyclerView lvlowongan;
 
@@ -62,6 +64,17 @@ public class Beranda extends Fragment {
         getActivity().setTitle("BKK SMEKPRI");
         setHasOptionsMenu(true);
 
+        pullToRefresh = view.findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getActivity().recreate();
+//                pullToRefresh.setRefreshing(false);
+                pullToRefresh.setEnabled(false);
+                pDialog.show();
+            }
+        });
+
         lvlowongan = (RecyclerView) view.findViewById(R.id.lvlowongan);
         LinearLayoutManager llm = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         lvlowongan.setLayoutManager(llm);
@@ -69,39 +82,37 @@ public class Beranda extends Fragment {
         lvlowongan.setHasFixedSize(true);
 
         pDialog = new ProgressDialog(getActivity());
-        pDialog.setCancelable(false);
         pDialog.setMessage("Proses ...");
-        showDialog();
+        pDialog.show();
 
         list_data = new ArrayList<HashMap<String, String>>();
 
-        TextView t = (TextView) view.findViewById(R.id.t);
-        t.setText(String.valueOf(list_data.size()));
+//        TextView t = (TextView) view.findViewById(R.id.t);
+//        t.setText(String.valueOf(list_data.size()));
 
         requestQueue = Volley.newRequestQueue(getActivity());
         stringRequest = new StringRequest(Request.Method.GET, url_lowongan, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                Log.e(TAG, response.toString());
-                hideDialog();
 
                 try{
                     JSONArray dataArray= new JSONArray(response);
 
+                    pDialog.dismiss();
                     for (int i =0; i<dataArray.length(); i++) {
 
-                        JSONObject json = dataArray.getJSONObject(i);
-//                        int extraId = Integer.parseInt(getActivity().getIntent().getStringExtra(TAG_ID));
-//                        int id = json.getInt("id_jurusan");
-//                        if (extraId == id)
-                        {
+                        JSONObject json = dataArray.getJSONObject(i);{
+
                             HashMap<String, String> map = new HashMap<String, String>();
 
                         map.put("id_lowongan", json.getString("id_lowongan"));
-                        map.put("nama", json.getString("nama"));
+                            map.put("id_industri", json.getString("id_industri"));
+
+                            map.put("nama", json.getString("nama"));
                         map.put("judul", json.getString("judul"));
                         map.put("tutup", json.getString("tutup"));
+                        map.put("gambar", json.getString("gambar"));
                         list_data.add(map);
                         berandaAdapter = new BerandaAdapter(getActivity(), list_data);
                         lvlowongan.setAdapter(berandaAdapter);
@@ -119,7 +130,6 @@ public class Beranda extends Fragment {
             {
                 Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_LONG).show();
 
-                hideDialog();
             }
         });
         requestQueue.add(stringRequest);
@@ -149,16 +159,6 @@ public class Beranda extends Fragment {
             }
         });
         searchItem.setActionView(searchView);
-    }
-
-    private void showDialog() {
-        if (!pDialog.isShowing())
-            pDialog.show();
-    }
-
-    private void hideDialog() {
-        if (pDialog.isShowing())
-            pDialog.dismiss();
     }
 
 

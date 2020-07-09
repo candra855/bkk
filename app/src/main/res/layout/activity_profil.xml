@@ -7,6 +7,8 @@
     android:background="@color/background"
     tools:context=".Profil">
 
+    <include layout="@layout/content_main" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,49 +18,69 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:background="@color/colorPrimary"
-            android:padding="25dp">
+            android:padding="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/image_user"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                    <!--android:id="@+id/fotoProfile"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--app:civ_border_color="#fff"-->
+                    <!--app:civ_border_width="2dp"-->
+                    <!--tools:srcCompat="@tools:sample/avatars" />-->
+
+                <ImageView
+                    android:id="@+id/fotoProfile"
+                    android:layout_width="338dp"
+                    android:layout_height="150dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    app:civ_border_color="#fff"
-                    app:civ_border_width="2dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_span="3"
                     tools:srcCompat="@tools:sample/avatars" />
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/ganti_Foto"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Ganti Foto"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp" />
 
-                    <TextView
-                        android:id="@+id/hello"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Hello, "
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
 
-                    <TextView
-                        android:id="@+id/nameuser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="You !"
-                        android:textColor="@color/white"
-                        android:textSize="17dp" />
 
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_marginTop="10dp">-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/hello"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:text="Hello, "-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="17dp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/nameuser"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:text="You !"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="17dp" />-->
+
+                <!--</LinearLayout>-->
 
             </LinearLayout>
         </FrameLayout>

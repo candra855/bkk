@@ -40,7 +40,10 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
 
     public final String del = Server.URL +"lamaran_hapus.php";
     public static final String TAG_ID = "id";
+    public static final String TAG_IDL = "idl";
     public final static String TAG = "Pekerjaan";
+
+    String idl;
 
     ArrayList<HashMap<String ,String >> list_data;
     ArrayList<HashMap<String ,String >>  filterL;
@@ -60,16 +63,15 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
     @Override
     public void onBindViewHolder(LamaranAdapter.ViewHolder holder, final int position) {
 
-//        Picasso.with(context).load("http://smknprigen.sch.id/bkk/image/default.png").into(holder.imglist);
         holder.information_id.setText(list_data.get(position).get("judul"));
-//        holder.tanggal.setText(list_data.get(position).get("created_at"));
+        holder.tanggal.setText(list_data.get(position).get("tanggal"));
         holder.status.setText(list_data.get(position).get("status"));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String  id = list_data.get(position).get("id_lowongan");
+                String  idl = list_data.get(position).get("id_lowongan");
                 Intent detail=new Intent(context,DetailLowongan.class);
-                detail.putExtra(TAG_ID,id);
+                detail.putExtra(TAG_IDL,idl);
                 context.startActivity(detail);
             }
         });
@@ -94,8 +96,7 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
 //                            notifyDataSetChanged();
 
                                     if (dataObj.getString("message").equals("sukses")) {
-                                        Intent refresh=new Intent(context,MainActivity.class);
-                                        context.startActivity(refresh);
+                                        activity.recreate();
 
                                     } else if (dataObj.getString("message").equals("gagal")) {
                                         activity.recreate();
@@ -152,18 +153,16 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView information_id,created_at, status;
+        TextView information_id,tanggal, status;
         ImageButton batal;
-//        ImageView imglist;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             information_id = (TextView) itemView.findViewById(R.id.txt1_list2);
-//            created_at = (TextView) itemView.findViewById(R.id.txt2_list2);
+            tanggal = (TextView) itemView.findViewById(R.id.txt2_list2);
             status = (TextView) itemView.findViewById(R.id.txt3_list2);
             batal = (ImageButton) itemView.findViewById(R.id.batal);
-//            imglist = (ImageView) itemView.findViewById(R.id.imglist);
         }
     }
 

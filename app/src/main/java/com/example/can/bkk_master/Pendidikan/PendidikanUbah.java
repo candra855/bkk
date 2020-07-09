@@ -18,6 +18,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Controller.AppController;
+import com.example.can.bkk_master.Pekerjaan.Pekerjaan;
+import com.example.can.bkk_master.Profil;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
 
@@ -33,15 +35,19 @@ public class PendidikanUbah extends AppCompatActivity {
     private EditText tambah_user,ubah_tingkat,ubah_instansi,ubah_masuk,ubah_lulus;
     private TextView up_id;
     private Button simpan;
+    String id,idu,idn,idun;
 
     private String TAG_B = "tag_b";
 
     String url = Server.URL + "pendidikan_tampil.php";
-
     String url_update  = Server.URL + "pendidikan_ubah.php";
 
-    final String TAG ="Edit";
+    public static final String TAG_IDP = "idp";
     public final static String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
+
+    final String TAG ="Edit";
 
     public final static String TAG_MESSAGE = "message";
 
@@ -73,8 +79,7 @@ public class PendidikanUbah extends AppCompatActivity {
 
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        StringRequest stringRequests =
-                new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        StringRequest stringRequests = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -84,9 +89,9 @@ public class PendidikanUbah extends AppCompatActivity {
 
 
                                 JSONObject obj = dataArray.getJSONObject(i);
-                                int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
-                                int id = obj.getInt("id");
-                                String id_u = obj.getString("id");
+                                int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_IDP));
+                                int id = obj.getInt("id_pendidikan");
+                                String id_u = obj.getString("id_pendidikan");
                                 String tingkat = obj.getString("tingkat");
                                 String instansi = obj.getString("instansi");
                                 String masuk = obj.getString("masuk");
@@ -134,8 +139,14 @@ public class PendidikanUbah extends AppCompatActivity {
                     int code = Integer.parseInt(dataObj.getString("code"));
                     if (code == 1)
                     {
-                        onBackPressed();
-                        onRestart();
+                        idu = getIntent().getStringExtra(TAG_ID);
+                        idun = getIntent().getStringExtra(TAG_NAMA);
+                        idn = getIntent().getStringExtra(TAG_USERNAME);
+                        Intent intent = new Intent(PendidikanUbah.this,Pendidikan.class);
+                        intent.putExtra(TAG_ID, idu);
+                        intent.putExtra(TAG_USERNAME, idn);
+                        intent.putExtra(TAG_NAMA, idun);
+                        startActivity(intent);
                     }else if(code == 0)
                     {
                         recreate();
@@ -162,10 +173,9 @@ public class PendidikanUbah extends AppCompatActivity {
             @Override
 
             protected Map<String, String> getParams() throws AuthFailureError {
-
+                id = getIntent().getStringExtra(TAG_ID);
                 Map<String, String> map = new HashMap<>();
-
-                map.put("id", up_id.getText().toString());
+                map.put("id_pendidikan", up_id.getText().toString());
                 map.put("tingkat", ubah_tingkat.getText().toString());
                 map.put("instansi", ubah_instansi.getText().toString());
                 map.put("masuk",  ubah_masuk.getText().toString());
@@ -179,13 +189,18 @@ public class PendidikanUbah extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(stringRequest);
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        Intent intent = new Intent(PendidikanUbah.this,Pendidikan.class);
-        startActivity(intent);
-        return;
-    }
+//    @Override
+//    public void onBackPressed()
+//    {
+//        idu = getIntent().getStringExtra(TAG_ID);
+//        idun = getIntent().getStringExtra(TAG_NAMA);
+//        idn = getIntent().getStringExtra(TAG_USERNAME);
+//        Intent kembali = new Intent(PendidikanUbah.this, Pendidikan.class);
+//        kembali.putExtra(TAG_ID, idu);
+//        kembali.putExtra(TAG_USERNAME, idn);
+//        kembali.putExtra(TAG_NAMA, idun);
+//        startActivity(kembali);
+//
+//    }
 
 }

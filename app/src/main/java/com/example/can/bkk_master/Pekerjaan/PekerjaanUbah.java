@@ -18,6 +18,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Controller.AppController;
+import com.example.can.bkk_master.Pendidikan.Pendidikan;
+import com.example.can.bkk_master.Pendidikan.PendidikanUbah;
+import com.example.can.bkk_master.Profil;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
 
@@ -33,15 +36,20 @@ public class PekerjaanUbah extends AppCompatActivity {
     private EditText tambah_user,ubah_tempat,ubah_masuk,ubah_keluar;
     private TextView up_id;
     private Button simpan;
+    String id,idu,idn,idun;
 
     private String TAG_B = "tag_b";
 
     String url = Server.URL + "pekerjaan_tampil.php";
-
     String url_update  = Server.URL + "pekerjaan_ubah.php";
 
-    final String TAG ="Edit";
+    public static final String TAG_IDP = "idp";
     public final static String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
+
+    final String TAG ="Edit";
+
     public final static String TAG_MESSAGE = "message";
 
     @Override
@@ -71,53 +79,52 @@ public class PekerjaanUbah extends AppCompatActivity {
 
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        StringRequest stringRequests =
-                new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray dataArray = new JSONArray(response);
+        StringRequest stringRequests = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray dataArray = new JSONArray(response);
 
-                            for (int i = 0; i < dataArray.length(); i++) {
+                    for (int i = 0; i < dataArray.length(); i++) {
 
 
-                                JSONObject obj = dataArray.getJSONObject(i);
-                                int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
-                                int id = obj.getInt("id");
-                                String id_u = obj.getString("id");
-                                String tempat = obj.getString("tempat");
-                                String masuk = obj.getString("masuk");
-                                String keluar = obj.getString("keluar");
+                        JSONObject obj = dataArray.getJSONObject(i);
+                        int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_IDP));
+                        int id = obj.getInt("id_pekerjaan");
+                        String id_u = obj.getString("id_pekerjaan");
+                        String tempat = obj.getString("tempat");
+                        String masuk = obj.getString("masuk");
+                        String keluar = obj.getString("keluar");
 
-                                if (extraId == id) {
-                                    up_id.setText(id_u);
-                                    ubah_tempat.setText(tempat);
-                                    ubah_masuk.setText(masuk);
-                                    ubah_keluar.setText(keluar);
+                        if (extraId == id) {
+                            up_id.setText(id_u);
+                            ubah_tempat.setText(tempat);
+                            ubah_masuk.setText(masuk);
+                            ubah_keluar.setText(keluar);
 
-                                    {
+                            {
 
-                                    }
-                                }
                             }
-                            Log.d(TAG, "onResponse:" + response);
-                        }  catch(
-                                JSONException e)
-
-                        {
-                            e.printStackTrace();
                         }
                     }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        ubah_tempat.setText(error.getLocalizedMessage());
-                    }
-                });
+                    Log.d(TAG, "onResponse:" + response);
+                }  catch(
+                        JSONException e)
+
+                {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                up_id.setText(error.getLocalizedMessage());
+            }
+        });
         requestQueue.add(stringRequests);
     }
 
-    private void simpan ()
+    private void simpan()
     {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url_update, new Response.Listener<String>() {
@@ -126,19 +133,24 @@ public class PekerjaanUbah extends AppCompatActivity {
                 try {
                     JSONObject dataObj = new JSONObject(response);
 
-                    String code = dataObj.getString(TAG_MESSAGE);
-                    if (code.equals("sukses"))
-                    {
-                        onBackPressed();
-                        onRestart();
 
-                    }else if (code.equals("gagal"))
+                    int code = Integer.parseInt(dataObj.getString("code"));
+                    if (code == 1)
+                    {
+                        idu = getIntent().getStringExtra(TAG_ID);
+                        idun = getIntent().getStringExtra(TAG_NAMA);
+                        idn = getIntent().getStringExtra(TAG_USERNAME);
+                        Intent intent = new Intent(PekerjaanUbah.this,Pekerjaan.class);
+                        intent.putExtra(TAG_ID, idu);
+                        intent.putExtra(TAG_USERNAME, idn);
+                        intent.putExtra(TAG_NAMA, idun);
+                        startActivity(intent);
+                    }else if(code == 0)
                     {
                         recreate();
                     }
 
                     Toast.makeText(PekerjaanUbah.this, dataObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
-
                     // adapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
@@ -159,12 +171,11 @@ public class PekerjaanUbah extends AppCompatActivity {
             @Override
 
             protected Map<String, String> getParams() throws AuthFailureError {
-
+                id = getIntent().getStringExtra(TAG_ID);
                 Map<String, String> map = new HashMap<>();
-
-                map.put("id", up_id.getText().toString());
+                map.put("id_pekerjaan", up_id.getText().toString());
                 map.put("tempat", ubah_tempat.getText().toString());
-                map.put("masuk", ubah_masuk.getText().toString());
+                map.put("masuk",  ubah_masuk.getText().toString());
                 map.put("keluar", ubah_keluar.getText().toString());
 
                 return map;
@@ -175,13 +186,14 @@ public class PekerjaanUbah extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(stringRequest);
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        Intent intent = new Intent(PekerjaanUbah.this,Pekerjaan.class);
-        startActivity(intent);
-        return;
-    }
+//    @Override
+//    public void onBackPressed()
+//    {
+//        idu = getIntent().getStringExtra(TAG_ID);
+//        Intent kembali = new Intent(PekerjaanUbah.this, Pekerjaan.class);
+//        kembali.putExtra(TAG_ID, idu);
+//        startActivity(kembali);
+//
+//    }
 
 }

@@ -1,6 +1,10 @@
 package com.example.can.bkk_master;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +25,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Controller.AppController;
+import com.example.can.bkk_master.Pendidikan.Pendidikan;
+import com.example.can.bkk_master.Pendidikan.PendidikanUbah;
 import com.example.can.bkk_master.Server.Server;
 
 import org.json.JSONArray;
@@ -31,6 +37,9 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.can.bkk_master.Login.my_shared_preferences;
+import static com.example.can.bkk_master.Login.session_status;
+
 public class DataPribadi extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -40,14 +49,19 @@ public class DataPribadi extends AppCompatActivity {
     //    private Spinner up_sex, up_department_id;
     private Button ubah;
 
+    Boolean session = false;
+    String idu,idun,idn;
+    SharedPreferences sharedpreferences;
     private String TAG_B = "tag_b";
     String url = Server.URL + "users_tampil.php";
-
     String url_update  = Server.URL + "users_ubah.php";
     final String TAG ="Edit";
     public final static String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
     public final static String TAG_MESSAGE = "message";
-
+    RequestQueue requestQueue;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +123,9 @@ public class DataPribadi extends AppCompatActivity {
             }
         });
 
+        progressDialog = new ProgressDialog(DataPribadi.this);
+        progressDialog.setMessage("Proses ...");
+        progressDialog.show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequests =
@@ -117,12 +134,12 @@ public class DataPribadi extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONArray dataArray = new JSONArray(response);
-
+                            progressDialog.dismiss();
                             for (int i = 0; i < dataArray.length(); i++) {
 
 
                                 JSONObject obj = dataArray.getJSONObject(i);
-//                                int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
+                                int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
                                 int id = obj.getInt("id");
                                 String id_u = obj.getString("id");
                                 String username = obj.getString("username");
@@ -137,7 +154,7 @@ public class DataPribadi extends AppCompatActivity {
                                 String tinggi = obj.getString("tinggi");
                                 String berat = obj.getString("berat");
                                 String tgl_lahir = obj.getString("tgl_lahir");
-//                                if (extraId == id)
+                                if (extraId == id)
                                 {
                                     up_id.setText(id_u);
                                     ubah_username.setText(username);
@@ -170,6 +187,7 @@ public class DataPribadi extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         ubah_nama.setText(error.getLocalizedMessage());
+                        progressDialog.dismiss();
                     }
                 });
         requestQueue.add(stringRequests);
@@ -177,20 +195,30 @@ public class DataPribadi extends AppCompatActivity {
 
     private void simpan ()
     {
+        progressDialog = new ProgressDialog(DataPribadi.this);
+        progressDialog.setMessage("Proses ...");
+        progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url_update, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject dataObj = new JSONObject(response);
-
-                    String code = dataObj.getString(TAG_MESSAGE);
-                    if (code.equals("sukses"))
+                    progressDialog.dismiss();
+                    int code = Integer.parseInt(dataObj.getString("code"));
+                    if (code == 1)
                     {
-                        onBackPressed();
-                        onRestart();
+                        idu = getIntent().getStringExtra(TAG_ID);
+                        idun = getIntent().getStringExtra(TAG_NAMA);
+                        idn = getIntent().getStringExtra(TAG_USERNAME);
 
-                    }else if (code.equals("gagal"))
+                        Intent intent = new Intent(DataPribadi.this,Profil.class);
+                        intent.putExtra(TAG_ID, idu);
+                        intent.putExtra(TAG_USERNAME, idn);
+                        intent.putExtra(TAG_NAMA, idun);
+                        startActivity(intent);
+                        finish();
+                    }else if(code == 0)
                     {
                         recreate();
                     }
@@ -209,6 +237,7 @@ public class DataPribadi extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
                 Log.e(TAG, "Error: " + error.getMessage());
                 Toast.makeText(DataPribadi.this, error.getMessage(), Toast.LENGTH_LONG).show();
             }

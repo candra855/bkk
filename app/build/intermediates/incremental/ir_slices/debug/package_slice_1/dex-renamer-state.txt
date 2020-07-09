@@ -1,4 +1,4 @@
-#Wed Jul 01 11:27:57 ICT 2020
+#Thu Jul 09 18:37:50 ICT 2020
 base.0=D\:\\Data UYP\\New folder\\Smt 8\\SKRIPSI\\Project\\Bursa Kerja Khusus\\newmenu2\\step3 - Copy\\bkk-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.0=classes.dex
 renamed.0=classes.dex

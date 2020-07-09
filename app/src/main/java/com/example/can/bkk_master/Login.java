@@ -47,13 +47,14 @@ public class Login extends AppCompatActivity {
     private static final String TAG_MESSAGE = "message";
     private static final String TAG_LEVEL = "role_id";
     public final static String TAG_USERNAME = "username";
+    public final static String TAG_NAMA = "nama";
     public final static String TAG_ID = "id";
 
     String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id, username,level;
+    String id, username,nama,level;
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
@@ -93,12 +94,14 @@ public class Login extends AppCompatActivity {
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
-        //username = sharedpreferences.getString(TAG_USERNAME, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
 
         if (session) {
             Intent intent = new Intent(Login.this, MainActivity.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, username);
+            intent.putExtra(TAG_NAMA, nama);
             intent.putExtra(TAG_LEVEL, level);
             finish();
             startActivity(intent);
@@ -152,6 +155,7 @@ public class Login extends AppCompatActivity {
                     if (success == 1) {
                         String username = jObj.getString(TAG_USERNAME);
                         String id = jObj.getString(TAG_ID);
+                        String nama = jObj.getString(TAG_NAMA);
                         String level = jObj.getString(TAG_LEVEL);
 
                         Log.e("Successfully Login!", jObj.toString());
@@ -163,6 +167,7 @@ public class Login extends AppCompatActivity {
                         editor.putBoolean(session_status, true);
                         editor.putString(TAG_ID, id);
                         editor.putString(TAG_USERNAME, username);
+                        editor.putString(TAG_NAMA, nama);
                         editor.putString(TAG_LEVEL, level);
                         editor.commit();
 
@@ -170,6 +175,7 @@ public class Login extends AppCompatActivity {
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         intent.putExtra(TAG_ID, id);
                         intent.putExtra(TAG_USERNAME, username);
+                        intent.putExtra(TAG_NAMA, nama);
                         intent.putExtra(TAG_LEVEL, level);
                         finish();
                         startActivity(intent);

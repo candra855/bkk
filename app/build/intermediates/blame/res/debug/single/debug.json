@@ -1592,6 +1592,10 @@
         "source": "C:\\Users\\Can\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\314415e660efeec7cd71992e46c6a4f0\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Data UYP\\New folder\\Smt 8\\SKRIPSI\\Project\\Bursa Kerja Khusus\\newmenu2\\step3 - Copy\\bkk-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_detail_industri.xml.flat",
+        "source": "D:\\Data UYP\\New folder\\Smt 8\\SKRIPSI\\Project\\Bursa Kerja Khusus\\newmenu2\\step3 - Copy\\bkk-master\\app\\src\\main\\res\\layout\\activity_detail_industri.xml"
+    },
+    {
         "merged": "D:\\Data UYP\\New folder\\Smt 8\\SKRIPSI\\Project\\Bursa Kerja Khusus\\newmenu2\\step3 - Copy\\bkk-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
         "source": "C:\\Users\\Can\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\4b209daaa7ae6b57c5ec641d8fa91beb\\res\\layout\\notification_template_big_media_custom.xml"
     },

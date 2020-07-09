@@ -16,6 +16,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Adapter.PekerjaanAdapter;
+import com.example.can.bkk_master.Pendidikan.Pendidikan;
+import com.example.can.bkk_master.Profil;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
 
@@ -28,6 +30,7 @@ import java.util.HashMap;
 
 public class Pekerjaan extends AppCompatActivity {
 
+    String id,idu,idn,idun;
     public static View.OnClickListener myOnClickListener;
     FloatingActionButton fab;
 
@@ -38,7 +41,9 @@ public class Pekerjaan extends AppCompatActivity {
 
     String url_read = Server.URL + "pekerjaan_tampil.php";
 
-    public final static String TAG_ID = "id";
+    public static final String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
 
     ArrayList<HashMap<String ,String>> list_data;
     PekerjaanAdapter pekerjaanAdapter;
@@ -49,14 +54,18 @@ public class Pekerjaan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pekerjaan);
 
-//        final int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
+        final int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
+        idun = getIntent().getStringExtra(TAG_NAMA);
+        idn = getIntent().getStringExtra(TAG_USERNAME);
         fab         = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Pekerjaan.this,PekerjaanTambah.class);
-//                intent.putExtra(TAG_ID, Integer.toString(extraId));
+                intent.putExtra(TAG_ID, Integer.toString(extraId));
+                intent.putExtra(TAG_USERNAME, idn);
+                intent.putExtra(TAG_NAMA, idun);
                 startActivity(intent);
             }
         });
@@ -80,12 +89,12 @@ public class Pekerjaan extends AppCompatActivity {
                     for (int i =0; i<dataArray.length(); i++)
                     {
                         JSONObject json = dataArray.getJSONObject(i);
-//                        int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
-//                        int id = json.getInt("user_id");
-//                        if (extraId== id )
+                        int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
+                        int id = json.getInt("user_id");
+                        if (extraId== id )
                         {
                             HashMap<String, String> map = new HashMap<String, String>();
-                            map.put("id", json.getString("id"));
+                            map.put("id_pekerjaan", json.getString("id_pekerjaan"));
                             map.put("tempat", json.getString("tempat"));
                             map.put("masuk", json.getString("masuk"));
                             map.put("keluar", json.getString("keluar"));
@@ -109,6 +118,20 @@ public class Pekerjaan extends AppCompatActivity {
         });
         requestQueue.add(stringRequest);
 
+
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        idu = getIntent().getStringExtra(TAG_ID);
+        idun = getIntent().getStringExtra(TAG_NAMA);
+        idn = getIntent().getStringExtra(TAG_USERNAME);
+        Intent kembali = new Intent(Pekerjaan.this, Profil.class);
+        kembali.putExtra(TAG_ID, idu);
+        kembali.putExtra(TAG_USERNAME, idn);
+        kembali.putExtra(TAG_NAMA, idun);
+        startActivity(kembali);
 
     }
 

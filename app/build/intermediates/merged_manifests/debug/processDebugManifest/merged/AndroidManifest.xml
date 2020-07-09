@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name="com.example.can.bkk_master.Controller.AppController"
@@ -22,6 +23,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_logo1"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.can.bkk_master.Login" >
             <intent-filter>
@@ -45,6 +47,7 @@
         <activity android:name="com.example.can.bkk_master.Pendidikan.PendidikanUbah" />
         <activity android:name="com.example.can.bkk_master.Pekerjaan.PekerjaanTambah" />
         <activity android:name="com.example.can.bkk_master.Pekerjaan.PekerjaanUbah" />
+        <activity android:name="com.example.can.bkk_master.DetailIndustri" />
     </application>
 
 </manifest>

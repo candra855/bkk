@@ -29,6 +29,16 @@
                     android:textSize="0dp" />
 
                 <TextView
+                    android:id="@+id/id_industri2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:focusable="false"
+                    android:hint="ID "
+                    android:inputType="number"
+                    android:textSize="0dp" />
+
+                <TextView
                     android:id="@+id/judul_tampil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -38,67 +48,73 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"/>
 
-                <TextView
-                    android:id="@+id/txt2l"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Nama Industri :"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/nama_industri_tampil"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="16sp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txt22"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Nama Industri :"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/img_detail_lowongan"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="0dp"
+                        android:src="@drawable/ic_business_black" />
 
-                <TextView
-                    android:id="@+id/alamat_industri_tampil"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="16sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/txt2l"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Nama Industri :"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
-                <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:layout_marginBottom="10dp">-->
+                    <TextView
+                        android:id="@+id/nama_industri_tampil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="Nama Industri"
+                        android:textSize="16sp" />
 
-                <!--<TextView-->
-                <!--android:id="@+id/txt2"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Buka : "-->
-                <!--android:textSize="13sp"-->
-                <!--android:textStyle="bold" />-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Alamat Industri :"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
-                <!--<TextView-->
-                <!--android:id="@+id/created_at_tampil"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="1 Januari 2020"-->
-                <!--android:textSize="13sp"-->
-                <!--android:textStyle="bold" />-->
+                    <TextView
+                        android:id="@+id/alamat_industri_tampil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="Alamat Industri"
+                        android:textSize="16sp" />
 
-                <!--</LinearLayout>-->
+                        <Button
+                            android:id="@+id/btn_lihat_industri"
+                            android:layout_width="150dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/costum_button"
+                            android:text="Lihat Industri"
+                            android:textColor="#fff"
+                            android:textSize="10dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -178,6 +194,7 @@
                     android:layout_marginBottom="10dp"/>
 
                 <FrameLayout
+                    android:id="@+id/frame_bawah"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"/>
 
@@ -185,6 +202,7 @@
         </ScrollView>
 
     <FrameLayout
+        android:id="@+id/frame_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"

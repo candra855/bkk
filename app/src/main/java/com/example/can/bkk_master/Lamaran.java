@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -32,6 +33,7 @@ import java.util.HashMap;
 
 public class Lamaran extends Fragment {
 
+    SwipeRefreshLayout pullToRefresh;
     ProgressDialog pDialog;
     private RecyclerView lvstatus;
 
@@ -56,6 +58,16 @@ public class Lamaran extends Fragment {
 
         getActivity().setTitle("BKK SMEKPRI");
 
+        pullToRefresh = view.findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getActivity().recreate();
+                pullToRefresh.setRefreshing(false);
+                pullToRefresh.setEnabled(isHidden());
+            }
+        });
+
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
@@ -64,21 +76,18 @@ public class Lamaran extends Fragment {
         list_data = new ArrayList<HashMap<String, String>>();
 
         pDialog = new ProgressDialog(getActivity());
-        pDialog.setCancelable(false);
         pDialog.setMessage("Proses ...");
-        showDialog();
+        pDialog.show();
 
         requestQueue = Volley.newRequestQueue(getActivity());
         stringRequest = new StringRequest(Request.Method.GET, url_status, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                Log.e(TAG, response.toString());
-                hideDialog();
-
                 try{
                     JSONArray dataArray= new JSONArray(response);
 
+                    pDialog.dismiss();
                     for (int i =0; i<dataArray.length(); i++)
                     {
                         JSONObject json = dataArray.getJSONObject(i);
@@ -91,6 +100,7 @@ public class Lamaran extends Fragment {
                             map.put("id_lowongan", json.getString("id_lowongan"));
                             map.put("judul", json.getString("judul"));
                             map.put("status", json.getString("status"));
+                            map.put("tanggal", json.getString("tanggal"));
                             list_data.add(map);
                             lamaranAdapter = new LamaranAdapter(getActivity(), list_data);
                             lvstatus.setAdapter(lamaranAdapter);
@@ -108,7 +118,6 @@ public class Lamaran extends Fragment {
             {
                 Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_LONG).show();
 
-                hideDialog();
             }
         });
         requestQueue.add(stringRequest);
@@ -117,15 +126,6 @@ public class Lamaran extends Fragment {
         return view;
     }
 
-    private void showDialog() {
-        if (!pDialog.isShowing())
-            pDialog.show();
-    }
-
-    private void hideDialog() {
-        if (pDialog.isShowing())
-            pDialog.dismiss();
-    }
 }
 
 

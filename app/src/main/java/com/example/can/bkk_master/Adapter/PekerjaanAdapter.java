@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.can.bkk_master.Controller.AppController;
 import com.example.can.bkk_master.Pekerjaan.Pekerjaan;
 import com.example.can.bkk_master.Pekerjaan.PekerjaanUbah;
+import com.example.can.bkk_master.Pendidikan.Pendidikan;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
 
@@ -33,13 +35,23 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import static com.example.can.bkk_master.Login.my_shared_preferences;
+import static com.example.can.bkk_master.Login.session_status;
+
 public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.ViewHolder>{
 
+    String id,username,nama;
     Context context;
     Activity activity;
 
+    SharedPreferences sharedpreferences;
+    Boolean session = false;
+
     public final String del = Server.URL +"pekerjaan_hapus.php";
     public static final String TAG_ID = "id";
+    public static final String TAG_IDP = "idp";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
     public final static String TAG = "Pekerjaan";
 
     ArrayList<HashMap<String ,String >> list_data;
@@ -60,14 +72,19 @@ public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.View
     @Override
     public void onBindViewHolder(PekerjaanAdapter.ViewHolder holder, final int position) {
 
-//        Picasso.with(context).load("http://smknprigen.sch.id/bkk/image/default.png").into(holder.imglist);
+        sharedpreferences = context.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
+
         holder.tempat.setText(list_data.get(position).get("tempat"));
         holder.masuk.setText(list_data.get(position).get("masuk"));
         holder.keluar.setText(list_data.get(position).get("keluar"));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String  id = list_data.get(position).get("id");
+                final String  idp = list_data.get(position).get("id_pekerjaan");
                 final String  user_id = list_data.get(position).get("user_id");
                 final CharSequence[] options = { "Perbarui","Hapus" };
                 android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(context);
@@ -78,7 +95,10 @@ public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.View
                         if (options[item].equals("Perbarui"))
                         {
                             Intent detail=new Intent(context,PekerjaanUbah.class);
-                            detail.putExtra(TAG_ID,id);
+                            detail.putExtra(TAG_ID, id);
+                            detail.putExtra(TAG_IDP, idp);
+                            detail.putExtra(TAG_USERNAME, username);
+                            detail.putExtra(TAG_NAMA, nama);
                             context.startActivity(detail);
                         }
                         else if (options[item].equals("Hapus")) {
@@ -100,6 +120,9 @@ public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.View
 
                                                 if (dataObj.getString("message").equals("sukses")) {
                                                     Intent refresh=new Intent(context,Pekerjaan.class);
+                                                    refresh.putExtra(TAG_ID, id);
+                                                    refresh.putExtra(TAG_USERNAME, username);
+                                                    refresh.putExtra(TAG_NAMA, nama);
                                                     context.startActivity(refresh);
 
                                                 } else if (dataObj.getString("message").equals("gagal")) {
@@ -128,7 +151,7 @@ public class PekerjaanAdapter extends RecyclerView.Adapter<PekerjaanAdapter.View
 //                        id = activity.getIntent().getStringExtra(TAG_ID);
 //                        sharedpreferences = context.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
                                             Map<String, String> map = new HashMap<String, String>();
-                                            map.put("id", id);
+                                            map.put("id_pekerjaan", idp);
                                             return map;
                                         }
 
