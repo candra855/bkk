@@ -38,7 +38,7 @@ import static com.example.can.bkk_master.Login.session_status;
 
 public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.ViewHolder>{
 
-    String id,username,nama;
+    String id,username,nama,jurusan;
     Context context;
     Activity activity;
 
@@ -50,6 +50,7 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
     public static final String TAG_IDP = "idp";
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
     public final static String TAG = "Pendidikan";
 
     ArrayList<HashMap<String ,String >> list_data;
@@ -75,6 +76,7 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
         nama = sharedpreferences.getString(TAG_NAMA, null);
+        jurusan = sharedpreferences.getString(TAG_JURUSAN, null);
 
 
         holder.tingkat.setText(list_data.get(position).get("tingkat"));
@@ -100,6 +102,7 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
                             detail.putExtra(TAG_IDP, idp);
                             detail.putExtra(TAG_USERNAME, username);
                             detail.putExtra(TAG_NAMA, nama);
+                            detail.putExtra(TAG_JURUSAN, jurusan);
                             context.startActivity(detail);
                         }
                         else if (options[item].equals("Hapus")) {
@@ -116,18 +119,19 @@ public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.Vi
                                                 JSONObject dataObj = new JSONObject(response);
 
 
-                                                Toast.makeText(context, dataObj.getString("message"), Toast.LENGTH_LONG).show();
+                                                Toast.makeText(context, dataObj.getString("message")+(" ! Menghapus Data"), Toast.LENGTH_LONG).show();
 //                            notifyDataSetChanged();
 
-                                                if (dataObj.getString("message").equals("sukses")) {
+                                                if (dataObj.getString("message").equals("Sukses")) {
 
                                                     Intent refresh=new Intent(context,Pendidikan.class);
                                                     refresh.putExtra(TAG_ID, id);
                                                     refresh.putExtra(TAG_USERNAME, username);
                                                     refresh.putExtra(TAG_NAMA, nama);
+                                                    refresh.putExtra(TAG_JURUSAN, jurusan);
                                                     context.startActivity(refresh);
 
-                                                } else if (dataObj.getString("message").equals("gagal")) {
+                                                } else if (dataObj.getString("message").equals("Gagal")) {
                                                     activity.recreate();
                                                 }
                                             } catch (JSONException e) {

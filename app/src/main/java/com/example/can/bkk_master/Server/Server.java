@@ -5,6 +5,7 @@ public class Server {
 //    public static final String URL = "http://152746201341.ip-dynamic.com/login/apibkk/";
 //    public static final String URL = "http://smknprigen.sch.id/login/apibkk/";
         public static final String URL = "http://muslikh.my.id/api/bkk/";
+    public static final String URL_UPLOAD = "http://muslikh.my.id/bkk/image/";
 
     }
 

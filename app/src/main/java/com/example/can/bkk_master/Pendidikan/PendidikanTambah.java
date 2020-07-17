@@ -3,6 +3,7 @@ package com.example.can.bkk_master.Pendidikan;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Controller.AppController;
+import com.example.can.bkk_master.MainActivity;
+import com.example.can.bkk_master.Profil;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
 
@@ -30,12 +33,13 @@ public class PendidikanTambah extends AppCompatActivity {
 
     private EditText tambah_tingkat,tambah_instansi,tambah_masuk,tambah_lulus;
     private Button simpan;
-    String id,idu,idn,idun;
+    String id,idu,idn,idun,idj;
 
     private String TAG = "tag";
     private String TAG_ID="id";
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
     private static String url = Server.URL + "pendidikan_tambah.php";
     private String TAG_SUCCESS = "success";
     public final static String TAG_MESSAGE = "message";
@@ -46,6 +50,19 @@ public class PendidikanTambah extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pendidikan_tambah);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Tambah");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         final RequestQueue request = Volley.newRequestQueue(getApplicationContext());
 //        tambah_user = (EditText) findViewById(R.id.add_industry_id);
@@ -80,10 +97,12 @@ public class PendidikanTambah extends AppCompatActivity {
                         idu = getIntent().getStringExtra(TAG_ID);
                         idun = getIntent().getStringExtra(TAG_NAMA);
                         idn = getIntent().getStringExtra(TAG_USERNAME);
+                        idj = getIntent().getStringExtra(TAG_JURUSAN);
                         Intent intent = new Intent(PendidikanTambah.this,Pendidikan.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);
+                        intent.putExtra(TAG_JURUSAN, idj);
                         startActivity(intent);
                     }else if(code == 0)
                     {

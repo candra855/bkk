@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,7 +22,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.can.bkk_master.Controller.AppController;
+import com.example.can.bkk_master.DataPribadi;
 import com.example.can.bkk_master.DetailLowongan;
+import com.example.can.bkk_master.DetailLowonganHidden;
 import com.example.can.bkk_master.MainActivity;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
@@ -33,6 +37,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import static com.example.can.bkk_master.Login.my_shared_preferences;
+import static com.example.can.bkk_master.Login.session_status;
+
 public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHolder>{
 
     Context context;
@@ -43,7 +50,9 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
     public static final String TAG_IDL = "idl";
     public final static String TAG = "Pekerjaan";
 
-    String idl;
+    SharedPreferences sharedpreferences;
+    Boolean session = false;
+    String id;
 
     ArrayList<HashMap<String ,String >> list_data;
     ArrayList<HashMap<String ,String >>  filterL;
@@ -63,15 +72,63 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
     @Override
     public void onBindViewHolder(LamaranAdapter.ViewHolder holder, final int position) {
 
+        sharedpreferences = context.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+
         holder.information_id.setText(list_data.get(position).get("judul"));
         holder.tanggal.setText(list_data.get(position).get("tanggal"));
         holder.status.setText(list_data.get(position).get("status"));
+        holder.pesan.setVisibility(View.GONE);
+
+        if(holder.status.getText().toString().equals("DITERIMA")) {
+            holder.status.setTextColor(Color.parseColor("#FF6BB225"));
+            holder.pesan.setVisibility(View.VISIBLE);
+            holder.pesan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(context);
+                    alert.setMessage("Selamat, lamaran anda diterima. Silahkan lihat informasi lain untuk proses selanjutnya.")
+                            .setCancelable(false)
+                            .setNegativeButton("Tutup", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog keluar = alert.create();
+                    keluar.show(); }
+            });
+
+        } else  if(holder.status.getText().toString().equals("DITOLAK")) {
+            holder.status.setTextColor(Color.parseColor("#FFD81B60"));
+            holder.pesan.setVisibility(View.VISIBLE);
+            holder.pesan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(context);
+                    alert.setMessage("Maaf, lamaran anda ditolak.")
+                            .setCancelable(false)
+                            .setNegativeButton("Tutup", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog keluar = alert.create();
+                    keluar.show(); }
+            });
+           }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String  idl = list_data.get(position).get("id_lowongan");
-                Intent detail=new Intent(context,DetailLowongan.class);
+                Intent detail=new Intent(context,DetailLowonganHidden.class);
                 detail.putExtra(TAG_IDL,idl);
+                detail.putExtra(TAG_ID,id);
                 context.startActivity(detail);
             }
         });
@@ -92,13 +149,13 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
                                     JSONObject dataObj = new JSONObject(response);
 
 
-                                    Toast.makeText(context, dataObj.getString("message"), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context, dataObj.getString("message")+(" ! Menghapus Data"), Toast.LENGTH_LONG).show();
 //                            notifyDataSetChanged();
 
-                                    if (dataObj.getString("message").equals("sukses")) {
+                                    if (dataObj.getString("message").equals("Sukses")) {
                                         activity.recreate();
 
-                                    } else if (dataObj.getString("message").equals("gagal")) {
+                                    } else if (dataObj.getString("message").equals("Gagal")) {
                                         activity.recreate();
                                     }
                                 } catch (JSONException e) {
@@ -154,15 +211,16 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView information_id,tanggal, status;
-        ImageButton batal;
+        ImageButton batal,pesan;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             information_id = (TextView) itemView.findViewById(R.id.txt1_list2);
-            tanggal = (TextView) itemView.findViewById(R.id.txt2_list2);
-            status = (TextView) itemView.findViewById(R.id.txt3_list2);
+            status = (TextView) itemView.findViewById(R.id.txt2_list2);
+            tanggal = (TextView) itemView.findViewById(R.id.txt3_list2);
             batal = (ImageButton) itemView.findViewById(R.id.batal);
+            pesan = (ImageButton) itemView.findViewById(R.id.pesan);
         }
     }
 

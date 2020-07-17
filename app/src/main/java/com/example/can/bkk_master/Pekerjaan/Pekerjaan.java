@@ -1,11 +1,13 @@
 package com.example.can.bkk_master.Pekerjaan;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -30,7 +32,7 @@ import java.util.HashMap;
 
 public class Pekerjaan extends AppCompatActivity {
 
-    String id,idu,idn,idun;
+    String id,idu,idn,idun,idj;
     public static View.OnClickListener myOnClickListener;
     FloatingActionButton fab;
 
@@ -38,12 +40,14 @@ public class Pekerjaan extends AppCompatActivity {
 
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
+    ProgressDialog progressDialog;
 
     String url_read = Server.URL + "pekerjaan_tampil.php";
 
     public static final String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
 
     ArrayList<HashMap<String ,String>> list_data;
     PekerjaanAdapter pekerjaanAdapter;
@@ -54,9 +58,33 @@ public class Pekerjaan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pekerjaan);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Riwayat Pekerjaan");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idu = getIntent().getStringExtra(TAG_ID);
+                idun = getIntent().getStringExtra(TAG_NAMA);
+                idn = getIntent().getStringExtra(TAG_USERNAME);
+                idj = getIntent().getStringExtra(TAG_JURUSAN);
+                Intent kembali = new Intent(Pekerjaan.this, Profil.class);
+                kembali.putExtra(TAG_ID, idu);
+                kembali.putExtra(TAG_USERNAME, idn);
+                kembali.putExtra(TAG_NAMA, idun);
+                kembali.putExtra(TAG_JURUSAN, idj);
+                startActivity(kembali);
+                finish();
+            }
+        });
+
         final int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
         idun = getIntent().getStringExtra(TAG_NAMA);
         idn = getIntent().getStringExtra(TAG_USERNAME);
+        idj = getIntent().getStringExtra(TAG_JURUSAN);
         fab         = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +94,7 @@ public class Pekerjaan extends AppCompatActivity {
                 intent.putExtra(TAG_ID, Integer.toString(extraId));
                 intent.putExtra(TAG_USERNAME, idn);
                 intent.putExtra(TAG_NAMA, idun);
+                intent.putExtra(TAG_JURUSAN, idj);
                 startActivity(intent);
             }
         });
@@ -77,6 +106,9 @@ public class Pekerjaan extends AppCompatActivity {
         lvpekerjaan.setLayoutManager(llm);
         list_data = new ArrayList<HashMap<String, String>>();
 
+        progressDialog = new ProgressDialog(Pekerjaan.this);
+        progressDialog.setMessage("Memuat ...");
+        progressDialog.show();
 
         requestQueue = Volley.newRequestQueue(Pekerjaan.this);
         stringRequest = new StringRequest(Request.Method.GET, url_read, new Response.Listener<String>() {
@@ -85,7 +117,7 @@ public class Pekerjaan extends AppCompatActivity {
 
                 try{
                     JSONArray dataArray= new JSONArray(response);
-
+                    progressDialog.dismiss();
                     for (int i =0; i<dataArray.length(); i++)
                     {
                         JSONObject json = dataArray.getJSONObject(i);
@@ -127,12 +159,14 @@ public class Pekerjaan extends AppCompatActivity {
         idu = getIntent().getStringExtra(TAG_ID);
         idun = getIntent().getStringExtra(TAG_NAMA);
         idn = getIntent().getStringExtra(TAG_USERNAME);
+        idj = getIntent().getStringExtra(TAG_JURUSAN);
         Intent kembali = new Intent(Pekerjaan.this, Profil.class);
         kembali.putExtra(TAG_ID, idu);
         kembali.putExtra(TAG_USERNAME, idn);
         kembali.putExtra(TAG_NAMA, idun);
+        kembali.putExtra(TAG_JURUSAN, idj);
         startActivity(kembali);
-
+        finish();
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.can.bkk_master.Pendidikan;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Adapter.PendidikanAdapter;
+import com.example.can.bkk_master.MainActivity;
 import com.example.can.bkk_master.Profil;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
@@ -34,7 +37,7 @@ import static com.example.can.bkk_master.Login.session_status;
 
 public class Pendidikan extends AppCompatActivity {
 
-    String id,idu,idn,idun;
+    String id,idu,idn,idun,idj;
     private RecyclerView lvpendidikan;
     FloatingActionButton fab;
 
@@ -43,12 +46,14 @@ public class Pendidikan extends AppCompatActivity {
 
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
+    ProgressDialog progressDialog;
 
     String url_tampil = Server.URL + "pendidikan_tampil.php";
 
     public static final String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
 
     ArrayList<HashMap<String ,String>> list_data;
     PendidikanAdapter pendidikanAdapter;
@@ -58,11 +63,34 @@ public class Pendidikan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pendidikan);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Riwayat Pendidikan");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idu = getIntent().getStringExtra(TAG_ID);
+                idun = getIntent().getStringExtra(TAG_NAMA);
+                idn = getIntent().getStringExtra(TAG_USERNAME);
+                Intent kembali = new Intent(Pendidikan.this, Profil.class);
+                kembali.putExtra(TAG_ID, idu);
+                kembali.putExtra(TAG_USERNAME, idn);
+                kembali.putExtra(TAG_NAMA, idun);
+                kembali.putExtra(TAG_JURUSAN, idj);
+                startActivity(kembali);
+                finish();
+            }
+        });
+
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
 
         idun = getIntent().getStringExtra(TAG_NAMA);
         idn = getIntent().getStringExtra(TAG_USERNAME);
+        idj = getIntent().getStringExtra(TAG_JURUSAN);
         final int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
         fab         = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -73,6 +101,7 @@ public class Pendidikan extends AppCompatActivity {
                 intent.putExtra(TAG_ID, Integer.toString(extraId));
                 intent.putExtra(TAG_USERNAME, idn);
                 intent.putExtra(TAG_NAMA, idun);
+                intent.putExtra(TAG_JURUSAN, idj);
                 startActivity(intent);
             }
         });
@@ -84,6 +113,9 @@ public class Pendidikan extends AppCompatActivity {
         lvpendidikan.setLayoutManager(llm);
         list_data = new ArrayList<HashMap<String, String>>();
 
+        progressDialog = new ProgressDialog(Pendidikan.this);
+        progressDialog.setMessage("Memuat ...");
+        progressDialog.show();
 
         requestQueue = Volley.newRequestQueue(Pendidikan.this);
         stringRequest = new StringRequest(Request.Method.GET, url_tampil, new Response.Listener<String>() {
@@ -92,7 +124,7 @@ public class Pendidikan extends AppCompatActivity {
 
                 try{
                     JSONArray dataArray= new JSONArray(response);
-
+                    progressDialog.dismiss();
                     for (int i =0; i<dataArray.length(); i++)
                     {
                         JSONObject json = dataArray.getJSONObject(i);
@@ -140,8 +172,9 @@ public class Pendidikan extends AppCompatActivity {
         kembali.putExtra(TAG_ID, idu);
         kembali.putExtra(TAG_USERNAME, idn);
         kembali.putExtra(TAG_NAMA, idun);
+        kembali.putExtra(TAG_JURUSAN, idj);
         startActivity(kembali);
-
+        finish();
     }
 
 }

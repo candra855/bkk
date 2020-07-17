@@ -1,11 +1,14 @@
 package com.example.can.bkk_master;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +36,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.can.bkk_master.Adapter.BerandaAdapter.TAG_IDL;
+import static com.example.can.bkk_master.Login.my_shared_preferences;
+import static com.example.can.bkk_master.Login.session_status;
+
 
 public class DetailIndustri extends AppCompatActivity {
 
@@ -49,14 +54,33 @@ public class DetailIndustri extends AppCompatActivity {
     public final static String TAG_IDI = "idi";
     public final static String TAG_MESSAGE = "message";
 
-    String id;
+    String id,idu,idi;
     RequestQueue requestQueue;
     SharedPreferences sharedpreferences;
+    Boolean session = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_industri);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Detail Industri");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+
 
         id_industri = (TextView) findViewById(R.id.id_industri);
         nama = (TextView)  findViewById(R.id.nama_industri);
@@ -65,15 +89,31 @@ public class DetailIndustri extends AppCompatActivity {
         alamat = (TextView)  findViewById(R.id.alamat_industri);
         website = (TextView)  findViewById(R.id.website_industri);
         gambar = (ImageView)  findViewById(R.id.gambar_industri);
+        gambar = (ImageView) findViewById(R.id.gambar_industri);
+        gambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idu = getIntent().getStringExtra(TAG_ID);
+                idi = getIntent().getStringExtra(TAG_IDI);
+                sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+                session = sharedpreferences.getBoolean(session_status, false);
+                Intent intent = new Intent(DetailIndustri.this, FotoIndustri.class);
+                intent.putExtra(TAG_ID, idu);
+                intent.putExtra(TAG_IDI, idi);
+
+                startActivity(intent);
+            }
+        });
 
         ambilData();
+
     }
 
     public void ambilData()
     {
 
         pDialog = new ProgressDialog(DetailIndustri.this);
-        pDialog.setMessage("Proses ...");
+        pDialog.setMessage("Memuat ...");
         pDialog.show();
 
         RequestQueue  requestQueue = Volley.newRequestQueue(this.getApplicationContext());
@@ -103,20 +143,13 @@ public class DetailIndustri extends AppCompatActivity {
                                     alamat.setText(obj.getString("alamat"));
                                     website.setText(obj.getString("website"));
 //
-                                    String fotobase64 = obj.getString("gambar");
-                                    byte[] decodedString = Base64.decode(fotobase64, Base64.DEFAULT);
-                                    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                                    if (fotobase64.isEmpty()) {
-
-                                        Picasso.with(DetailIndustri.this).load("http://smknprigen.sch.id/bkk/image/default.png").into(gambar);
-                                    } else if (fotobase64.equals("null")) {
-
-                                        Picasso.with(DetailIndustri.this).load("http://smknprigen.sch.id/bkk/image/default.png").into(gambar);
-                                    } else {
-
-                                        gambar.setImageBitmap(decodedByte);
-                                    }
-
+                                    String imagePath = obj.getString("gambar");
+                                    Picasso.with(DetailIndustri.this)
+                                            .load("http://muslikh.my.id/bkk/image/" + imagePath)
+                                            .placeholder(R.drawable.ic_business_black)
+                                            .error(R.drawable.ic_business_black)
+                                            .fit()
+                                            .into(gambar);
                                 }
                             }
                             Log.d(TAG, "onResponse:" + response);

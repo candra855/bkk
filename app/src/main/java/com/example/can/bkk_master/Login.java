@@ -48,13 +48,14 @@ public class Login extends AppCompatActivity {
     private static final String TAG_LEVEL = "role_id";
     public final static String TAG_USERNAME = "username";
     public final static String TAG_NAMA = "nama";
+    public final static String TAG_JURUSAN = "id_jurusan";
     public final static String TAG_ID = "id";
 
     String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id, username,nama,level;
+    String id, username,nama,level,jurusan;
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
@@ -62,7 +63,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
+        getSupportActionBar();
 
 
         TextView isi_daftar = (TextView) findViewById(R.id.btn_daftar);
@@ -96,12 +97,14 @@ public class Login extends AppCompatActivity {
         id = sharedpreferences.getString(TAG_ID, null);
         username = sharedpreferences.getString(TAG_USERNAME, null);
         nama = sharedpreferences.getString(TAG_NAMA, null);
+        jurusan = sharedpreferences.getString(TAG_JURUSAN, null);
 
         if (session) {
             Intent intent = new Intent(Login.this, MainActivity.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, username);
             intent.putExtra(TAG_NAMA, nama);
+            intent.putExtra(TAG_JURUSAN, jurusan);
             intent.putExtra(TAG_LEVEL, level);
             finish();
             startActivity(intent);
@@ -156,6 +159,7 @@ public class Login extends AppCompatActivity {
                         String username = jObj.getString(TAG_USERNAME);
                         String id = jObj.getString(TAG_ID);
                         String nama = jObj.getString(TAG_NAMA);
+                        String jurusan = jObj.getString(TAG_JURUSAN);
                         String level = jObj.getString(TAG_LEVEL);
 
                         Log.e("Successfully Login!", jObj.toString());
@@ -168,6 +172,7 @@ public class Login extends AppCompatActivity {
                         editor.putString(TAG_ID, id);
                         editor.putString(TAG_USERNAME, username);
                         editor.putString(TAG_NAMA, nama);
+                        editor.putString(TAG_JURUSAN, jurusan);
                         editor.putString(TAG_LEVEL, level);
                         editor.commit();
 
@@ -176,6 +181,7 @@ public class Login extends AppCompatActivity {
                         intent.putExtra(TAG_ID, id);
                         intent.putExtra(TAG_USERNAME, username);
                         intent.putExtra(TAG_NAMA, nama);
+                        intent.putExtra(TAG_JURUSAN, jurusan);
                         intent.putExtra(TAG_LEVEL, level);
                         finish();
                         startActivity(intent);

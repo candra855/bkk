@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +37,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.example.can.bkk_master.Adapter.BerandaAdapter.TAG_IDL;
+import static com.example.can.bkk_master.DetailIndustri.TAG_IDI;
 import static com.example.can.bkk_master.Login.my_shared_preferences;
 import static com.example.can.bkk_master.Login.session_status;
 
@@ -47,14 +49,13 @@ public class DetailLowongan extends AppCompatActivity {
     final String cek = Server.URL + "cek_tombol_lamaran.php";
     private static String kirim = Server.URL + "lamaran_tambah.php";
 
-    TextView id_lowongan,judul_tampil,id_industri,deskripsi_tampil,jurusan_tampil,tutup_tampil,kualifikasi_tampil,lain_tampil,created_at_tampil,nama_tampil,alamat_tampil;
+    TextView id_lowongan,id_industri,judul_tampil,deskripsi_tampil,jurusan_tampil,tutup_tampil,kualifikasi_tampil,lain_tampil,buka_tampil,nama_tampil,alamat_tampil;
     ImageView img_detail_lowongan;
-    FrameLayout frame_button,frame_bawah;
+    FrameLayout frame_button,frame_bawah,frame_bawah2;
     private Button simpan,lihat_industri;
 
     public final static String TAG = "Detail";
     public final static String TAG_ID = "id";
-    public final static String TAG_IDI = "idi";
     public final static String TAG_MESSAGE = "message";
 
     String id,idu,idi;
@@ -67,24 +68,40 @@ public class DetailLowongan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_lowongan);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Detail Lowongan");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
 
         id_lowongan = (TextView) findViewById(R.id.id_lowongan);
         id_industri = (TextView) findViewById(R.id.id_industri2);
         judul_tampil = (TextView)  findViewById(R.id.judul_tampil);
         deskripsi_tampil = (TextView)  findViewById(R.id.deskripsi_tampil);
-//        jurusan_tampil = (TextView)  findViewById(R.id.ju);
+        jurusan_tampil = (TextView)  findViewById(R.id.jurusan_tampil);
+
+        buka_tampil = (TextView)  findViewById(R.id.buka_tampil);
         tutup_tampil = (TextView)  findViewById(R.id.tutup_tampil);
         kualifikasi_tampil = (TextView)  findViewById(R.id.kualifikasi_tampil);
         lain_tampil = (TextView)  findViewById(R.id.lain_tampil);
-//        created_at_tampil = (TextView)  findViewById(R.id.created_at_tampil);
 
         nama_tampil = (TextView)  findViewById(R.id.nama_industri_tampil);
         alamat_tampil = (TextView)  findViewById(R.id.alamat_industri_tampil);
         img_detail_lowongan = (ImageView)  findViewById(R.id.img_detail_lowongan);
         frame_button = (FrameLayout)  findViewById(R.id.frame_button);
         frame_bawah = (FrameLayout)  findViewById(R.id.frame_bawah);
+        frame_bawah2 = (FrameLayout)  findViewById(R.id.frame_bawah2);
 
         ambilData();
 
@@ -93,7 +110,7 @@ public class DetailLowongan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 idu = getIntent().getStringExtra(TAG_ID);
-                idi = getIntent().getStringExtra(TAG_IDI);
+                idi = getIntent().getExtras().getString("id_industri", id_industri.getText().toString());
                 Intent intent = new Intent(DetailLowongan.this, DetailIndustri.class);
                 intent.putExtra(TAG_ID, idu);
                 intent.putExtra(TAG_IDI, idi);
@@ -116,7 +133,7 @@ public class DetailLowongan extends AppCompatActivity {
     {
 
         pDialog = new ProgressDialog(DetailLowongan.this);
-        pDialog.setMessage("Proses ...");
+        pDialog.setMessage("Memuat ...");
         pDialog.show();
 
         RequestQueue  requestQueue = Volley.newRequestQueue(this.getApplicationContext());
@@ -142,28 +159,22 @@ public class DetailLowongan extends AppCompatActivity {
                                     id_lowongan.setText(id_u);
                                     judul_tampil.setText(obj.getString("judul"));
                                     deskripsi_tampil.setText(obj.getString("deskripsi"));
-                                    id_industri.setText(obj.getString("id_industri"));
-//                                    jurusan_tampil.setText(obj.getString("jurusan"));
+                                    jurusan_tampil.setText(obj.getString("jurusan"));
                                     tutup_tampil.setText(obj.getString("tutup"));
                                     kualifikasi_tampil.setText(obj.getString("kualifikasi"));
                                     lain_tampil.setText(obj.getString("lain"));
-//                                    created_at_tampil.setText(obj.getString("created_at"));
+                                    buka_tampil.setText(obj.getString("buka"));
                                     nama_tampil.setText(obj.getString("nama"));
                                     alamat_tampil.setText(obj.getString("alamat"));
+                                    id_industri.setText(obj.getString("id_industri"));
 
-                                    String fotobase64 = obj.getString("gambar");
-                                    byte[] decodedString = Base64.decode(fotobase64, Base64.DEFAULT);
-                                    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                                    if (fotobase64.isEmpty()) {
-
-                                        Picasso.with(DetailLowongan.this).load("http://smknprigen.sch.id/bkk/image/default.png").into(img_detail_lowongan);
-                                    } else if (fotobase64.equals("null")) {
-
-                                        Picasso.with(DetailLowongan.this).load("http://smknprigen.sch.id/bkk/image/default.png").into(img_detail_lowongan);
-                                    } else {
-
-                                        img_detail_lowongan.setImageBitmap(decodedByte);
-                                    }
+                                    String imagePath = obj.getString("gambar");
+                                    Picasso.with(DetailLowongan.this)
+                                            .load("http://muslikh.my.id/bkk/image/" + imagePath)
+                                            .placeholder(R.drawable.ic_business_black)
+                                            .error(R.drawable.ic_business_black)
+                                            .fit()
+                                            .into(img_detail_lowongan);
 
                                 }
                             }
@@ -206,6 +217,7 @@ public class DetailLowongan extends AppCompatActivity {
                         simpan.setVisibility(View.GONE);
                         frame_button.setVisibility(View.GONE);
                         frame_bawah.setVisibility(View.GONE);
+                        frame_bawah2.setVisibility(View.VISIBLE);
                     }
 
                     Toast.makeText(DetailLowongan.this, dataObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
@@ -234,7 +246,7 @@ public class DetailLowongan extends AppCompatActivity {
                 Map<String,String> map = new HashMap<String, String>();
                 map.put("id_user", id);
                 map.put("id_lowongan", id_lowongan.getText().toString());
-                map.put("status", String.valueOf("Menunggu"));
+                map.put("status", String.valueOf("MENUNGGU"));
 
                 return map;
             }

@@ -7,23 +7,56 @@
     android:orientation="vertical"
     tools:context=".DetailIndustri">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:theme="@style/ToolBarStyle">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/gambar_industri"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="0dp"
-                android:src="@drawable/ic_business_black" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorPrimary"
+                android:padding="0dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/gambar_industri"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        app:civ_border_color="#fff"
+                        app:civ_border_width="2dp"
+                        tools:srcCompat="@drawable/ic_business_black" />
+
+            </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <TextView
                 android:id="@+id/id_industri"
@@ -43,81 +76,177 @@
                 android:text="PT. Penggali Kubur"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="5dp"/>
 
-                <TextView
-                    android:id="@+id/txt9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Alamat"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+             <ImageView
+                 android:layout_width="13dp"
+                 android:layout_height="13dp"
+                 android:src="@drawable/ic_location_on"
+                 android:layout_gravity="center"
+                 android:layout_margin="3dp"/>
+
+            <TextView
+                android:id="@+id/txt9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat :"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            </LinearLayout>
 
                 <TextView
                     android:id="@+id/alamat_industri"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="alamat"
-                    android:textSize="16sp"
+                    android:text="Alamat"
+                    android:textSize="15sp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="18dp"/>
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_call_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
             <TextView
                 android:id="@+id/txt3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Telepon"
+                android:text="Telepon :"
                 android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/telepon_industri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="telepon"
-                android:textSize="16dp"
+                android:text="Telepon"
+                android:textSize="15dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="18dp"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_email_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
             <TextView
                 android:id="@+id/txt4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Email"
+                android:text="Email :"
                 android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/email_industri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:text="Email"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="18dp"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_language_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
             <TextView
                 android:id="@+id/txt5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="website"
+                android:text="Website :"
                 android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/website_industri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:text="Website"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="18dp"/>
 
+            <!--<TableRow-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.5dp"-->
+                <!--android:background="@color/darkgrey"-->
+                <!--android:layout_marginTop="2dp"-->
+                <!--android:layout_marginBottom="5dp"/>-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+        </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

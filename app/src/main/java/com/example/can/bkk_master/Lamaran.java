@@ -2,6 +2,7 @@ package com.example.can.bkk_master;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static com.example.can.bkk_master.Login.my_shared_preferences;
+import static com.example.can.bkk_master.Login.session_status;
+
 
 public class Lamaran extends Fragment {
 
@@ -39,15 +43,22 @@ public class Lamaran extends Fragment {
 
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
+    SharedPreferences sharedpreferences;
+    Boolean session = false;
 
     private static final String TAG = Lamaran.class.getSimpleName();
 
     String url_status = Server.URL + "lamaran_tampil.php";
 
     public final static String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
 
     ArrayList<HashMap<String ,String>> list_data;
     LamaranAdapter lamaranAdapter;
+
+    String id, username,nama,jurusan;
 
 
     @Override
@@ -57,6 +68,13 @@ public class Lamaran extends Fragment {
         View view = inflater.inflate(R.layout.fragment_lamaran, container, false);
 
         getActivity().setTitle("BKK SMEKPRI");
+
+        sharedpreferences = getActivity().getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
+        jurusan = sharedpreferences.getString(TAG_JURUSAN, null);
 
         pullToRefresh = view.findViewById(R.id.pullToRefresh);
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -76,7 +94,7 @@ public class Lamaran extends Fragment {
         list_data = new ArrayList<HashMap<String, String>>();
 
         pDialog = new ProgressDialog(getActivity());
-        pDialog.setMessage("Proses ...");
+        pDialog.setMessage("Memuat ...");
         pDialog.show();
 
         requestQueue = Volley.newRequestQueue(getActivity());
@@ -116,6 +134,7 @@ public class Lamaran extends Fragment {
         {
             public void onErrorResponse(VolleyError error)
             {
+//                Log.e(TAG, "Error: " + error.getMessage());
                 Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_LONG).show();
 
             }

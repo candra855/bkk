@@ -1,8 +1,10 @@
 package com.example.can.bkk_master.Pendidikan;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Controller.AppController;
+import com.example.can.bkk_master.MainActivity;
 import com.example.can.bkk_master.Pekerjaan.Pekerjaan;
 import com.example.can.bkk_master.Profil;
 import com.example.can.bkk_master.R;
@@ -35,7 +38,8 @@ public class PendidikanUbah extends AppCompatActivity {
     private EditText tambah_user,ubah_tingkat,ubah_instansi,ubah_masuk,ubah_lulus;
     private TextView up_id;
     private Button simpan;
-    String id,idu,idn,idun;
+    String id,idu,idn,idun,idj;
+    ProgressDialog progressDialog;
 
     private String TAG_B = "tag_b";
 
@@ -46,6 +50,7 @@ public class PendidikanUbah extends AppCompatActivity {
     public final static String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
 
     final String TAG ="Edit";
 
@@ -55,6 +60,19 @@ public class PendidikanUbah extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pendidikan_ubah);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Perbarui");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         editData(url);
 
@@ -77,6 +95,9 @@ public class PendidikanUbah extends AppCompatActivity {
             }
         });
 
+        progressDialog = new ProgressDialog(PendidikanUbah.this);
+        progressDialog.setMessage("Memuat ...");
+        progressDialog.show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequests = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -84,7 +105,7 @@ public class PendidikanUbah extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONArray dataArray = new JSONArray(response);
-
+                            progressDialog.dismiss();
                             for (int i = 0; i < dataArray.length(); i++) {
 
 
@@ -142,10 +163,12 @@ public class PendidikanUbah extends AppCompatActivity {
                         idu = getIntent().getStringExtra(TAG_ID);
                         idun = getIntent().getStringExtra(TAG_NAMA);
                         idn = getIntent().getStringExtra(TAG_USERNAME);
+                        idj = getIntent().getStringExtra(TAG_JURUSAN);
                         Intent intent = new Intent(PendidikanUbah.this,Pendidikan.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);
+                        intent.putExtra(TAG_JURUSAN, idj);
                         startActivity(intent);
                     }else if(code == 0)
                     {

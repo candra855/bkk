@@ -23,12 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".DetailLowongan" />
+        <activity android:name=".DetailLowonganHidden" />
         <activity android:name=".Tentang" />
+        <activity android:name=".TentangValidasi" />
         <activity android:name=".Profil" />
         <activity android:name=".Register" />
         <activity android:name=".DataPribadi" />
@@ -38,7 +37,11 @@
         <activity android:name=".Pendidikan.PendidikanUbah" />
         <activity android:name=".Pekerjaan.PekerjaanTambah" />
         <activity android:name=".Pekerjaan.PekerjaanUbah" />
-        <activity android:name=".DetailIndustri"></activity>
+        <activity android:name=".DetailIndustri" />
+        <activity android:name=".UbahPassword" />
+        <activity android:name=".FotoProfil"/>
+        <activity android:name=".FotoIndustri">
+        </activity>
     </application>
 
 </manifest>

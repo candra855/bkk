@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -50,7 +51,7 @@ public class DataPribadi extends AppCompatActivity {
     private Button ubah;
 
     Boolean session = false;
-    String idu,idun,idn;
+    String idu,idun,idn,idj;
     SharedPreferences sharedpreferences;
     private String TAG_B = "tag_b";
     String url = Server.URL + "users_tampil.php";
@@ -59,6 +60,7 @@ public class DataPribadi extends AppCompatActivity {
     public final static String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
     public final static String TAG_MESSAGE = "message";
     RequestQueue requestQueue;
     ProgressDialog progressDialog;
@@ -67,6 +69,19 @@ public class DataPribadi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_pribadi);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Data Pribadi");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         editData(url);
 
@@ -124,7 +139,7 @@ public class DataPribadi extends AppCompatActivity {
         });
 
         progressDialog = new ProgressDialog(DataPribadi.this);
-        progressDialog.setMessage("Proses ...");
+        progressDialog.setMessage("Memuat ...");
         progressDialog.show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -211,11 +226,13 @@ public class DataPribadi extends AppCompatActivity {
                         idu = getIntent().getStringExtra(TAG_ID);
                         idun = getIntent().getStringExtra(TAG_NAMA);
                         idn = getIntent().getStringExtra(TAG_USERNAME);
+                        idj = getIntent().getStringExtra(TAG_JURUSAN);
 
                         Intent intent = new Intent(DataPribadi.this,Profil.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);
+                        intent.putExtra(TAG_JURUSAN, idj);
                         startActivity(intent);
                         finish();
                     }else if(code == 0)

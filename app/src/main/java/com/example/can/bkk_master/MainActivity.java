@@ -1,13 +1,16 @@
 package com.example.can.bkk_master;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -28,6 +31,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.daimajia.slider.library.SliderLayout;
 import com.example.can.bkk_master.Server.Server;
 import com.squareup.picasso.Picasso;
 
@@ -46,18 +50,23 @@ public class MainActivity extends AppCompatActivity
 
     TextView txt_id, txt_username,username_user,nama_user;
     ImageView img_user;
-    String id, username,levelU,level,nama;
-    String idu,idun,idn;
+    String id, username,levelU,level,nama,jurusan;
+    String idu,idun,idn,idj;
     Intent intent;
     SharedPreferences sharedpreferences;
     Boolean session = false;
 
+    private RequestQueue requestQueue;
+    private StringRequest stringRequest;
+
+    String url = Server.URL + "users_tampil.php";
     public final static String TAG = "Profile";
 
     public static final String TAG_ID = "id";
 
     public static final String TAG_USERNAME = "username";
     public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
     public static final String TAG_IMG = "img";
     private static final String TAG_LEVEL = "role_id";
 
@@ -70,9 +79,18 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
+        level = sharedpreferences.getString(TAG_LEVEL, null);
+        jurusan = sharedpreferences.getString(TAG_JURUSAN, null);
+
         id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
         nama = getIntent().getStringExtra(TAG_NAMA);
+        jurusan = getIntent().getStringExtra(TAG_JURUSAN);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -86,23 +104,31 @@ public class MainActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         username_user = (TextView) headerView.findViewById(R.id.username_user);
         nama_user = (TextView) headerView.findViewById(R.id.nama_user);
-        img_user = (ImageView) headerView.findViewById(R.id.imageView);
+//        img_user = (ImageView) headerView.findViewById(R.id.imageView);
         username_user.setText(username);
         nama_user.setText(nama);
 
-        Picasso.with(this).load("https://1.bp.blogspot.com/-fYa1pg1wHwc/WD5kIS-CGII/AAAAAAAABhA/l4KSJkcr5lYwhEXMpL5Ai-ckgQVaZA5MgCLcB/s1600/CsiEjnzUIAA177d.jpg").into(img_user);
+//        Picasso.with(this).load("https://1.bp.blogspot.com/-fYa1pg1wHwc/WD5kIS-CGII/AAAAAAAABhA/l4KSJkcr5lYwhEXMpL5Ai-ckgQVaZA5MgCLcB/s1600/CsiEjnzUIAA177d.jpg").into(img_user);
 
         if (savedInstanceState == null) {
             fragment = new Beranda();
             callFragment(fragment);
         }
 
-        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
-        session = sharedpreferences.getBoolean(session_status, false);
-        id = sharedpreferences.getString(TAG_ID, null);
-        username = sharedpreferences.getString(TAG_USERNAME, null);
-        nama = sharedpreferences.getString(TAG_NAMA, null);
+        cekdatakosong();
 
+        if(level.equals("2"))
+        {
+
+        }else if(level.equals("3"))
+        {
+            Intent intent = new Intent(MainActivity.this, TentangValidasi.class);
+            intent.putExtra(TAG_ID, id);
+            intent.putExtra(TAG_USERNAME, username);
+            intent.putExtra(TAG_LEVEL, level);
+            intent.putExtra(TAG_NAMA,nama);
+            startActivity(intent);
+                   }
 
     }
 
@@ -118,7 +144,7 @@ public class MainActivity extends AppCompatActivity
 
     public void doExitApp(){
         if ((System.currentTimeMillis() - exitTime) > 2000) {
-           Toast.makeText(getBaseContext(), "Tekan Back Sekali lagi untuk Keluar", Toast.LENGTH_SHORT).show();
+           Toast.makeText(getBaseContext(), "Tekan Lagi Untuk Keluar", Toast.LENGTH_SHORT).show();
             exitTime = System.currentTimeMillis();
         } else {
             moveTaskToBack(true);
@@ -155,6 +181,7 @@ public class MainActivity extends AppCompatActivity
         idu = getIntent().getStringExtra(TAG_ID);
         idun = getIntent().getStringExtra(TAG_NAMA);
         idn = getIntent().getStringExtra(TAG_USERNAME);
+        idj = getIntent().getStringExtra(TAG_JURUSAN);
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
 
@@ -164,8 +191,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.beranda) {
             fragment = new Beranda();
             callFragment(fragment);
-        } else if (id == R.id.nav_gallery) {
-
+        } else if (id == R.id.rekomendasi) {
+            fragment = new Rekomendasi();
+            callFragment(fragment);
         } else if (id == R.id.lamaran) {
             fragment = new Lamaran();
             callFragment(fragment);
@@ -174,6 +202,7 @@ public class MainActivity extends AppCompatActivity
             profil.putExtra(TAG_ID, idu);
             profil.putExtra(TAG_NAMA, idun);
             profil.putExtra(TAG_USERNAME, idn);
+            profil.putExtra(TAG_JURUSAN, idj);
             startActivity(profil);
         } else if (id == R.id.tentang) {
             Intent intent = new Intent(MainActivity.this, Tentang.class);
@@ -201,5 +230,88 @@ public class MainActivity extends AppCompatActivity
                 .commit();
         }
 
+    public void cekdatakosong()
+    {
+
+        requestQueue = Volley.newRequestQueue(MainActivity.this);
+        stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try{
+                    JSONArray dataArray= new JSONArray(response);
+
+                    for (int i =0; i<dataArray.length(); i++)
+                    {
+
+                        JSONObject obj = dataArray.getJSONObject(i);
+                        int extraId = Integer.parseInt(id);
+                        int id = obj.getInt("id");
+                        String keahlian = obj.getString("keahlian");
+                        String alamat = obj.getString("alamat");
+                        String tinggi = obj.getString("tinggi");
+                        String berat = obj.getString("berat");
+                        if(extraId==id) {
+//                            nmuser.setText(obj.getString("nama"));
+                            if (keahlian.equals("null") || keahlian.isEmpty() ) {
+                                Lengkapi();
+                            }else if (alamat.equals("null") || alamat.isEmpty() ) {
+                                Lengkapi();
+                            }else if (tinggi.equals("0") || tinggi.isEmpty() ) {
+                                Lengkapi();
+                            }else if (berat.equals("0") || berat.isEmpty() ) {
+                                Lengkapi();
+                            }
+                        }
+
+                    }
+                } catch (JSONException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener()
+        {
+            public void onErrorResponse(VolleyError error)
+            {
+                Toast.makeText(MainActivity.this,error.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+        requestQueue.add(stringRequest);
+
+    }
+
+    public void Lengkapi()
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+        alert.setMessage("Ada data yang masih kosong !")
+                .setCancelable(false)
+                .setPositiveButton("Lengkapi", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        idu = getIntent().getStringExtra(TAG_ID);
+                        idun = getIntent().getStringExtra(TAG_NAMA);
+                        idn = getIntent().getStringExtra(TAG_USERNAME);
+                        idj = getIntent().getStringExtra(TAG_JURUSAN);
+                        Intent cek = new Intent(MainActivity.this, DataPribadi.class);
+                        cek.putExtra(TAG_ID, idu);
+                        cek.putExtra(TAG_NAMA, idun);
+                        cek.putExtra(TAG_USERNAME, idn);
+                        cek.putExtra(TAG_JURUSAN, idj);
+                        startActivity(cek);
+
+                    }
+                })
+                .setNegativeButton("Nanti saja", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog keluar = alert.create();
+        keluar.show();
+    }
 
 }

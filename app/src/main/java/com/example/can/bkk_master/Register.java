@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -63,7 +64,20 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-//        getSupportActionBar().hide();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Daftar");
+        setSupportActionBar(toolbar);
+
+        //Set icon to toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
         conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         {
@@ -97,7 +111,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
-                Log.d(TAG_B, "onDateSet: date: " + year + "/" + month + "/" + day);
+                Log.d(TAG_B, "onDateSet: date: " + day + "/" + month + "/" + year);
                 String date = day + "/" + month + "/" + year;
                 tambah_tv_tgl_lahir.setText(date);
             }
@@ -140,7 +154,7 @@ public class Register extends AppCompatActivity {
                 String tahun_lulus = tambah_tahun_lulus.getText().toString();
                 String jurusan = String.valueOf(tambah_jurusan.getSelectedItemPosition());
                 String tgl_lahir = tambah_tgl_lahir.getText().toString();
-                String role_id = String.valueOf(2);
+                String role_id = String.valueOf(3);
 
                 if (conMgr.getActiveNetworkInfo() != null
                         && conMgr.getActiveNetworkInfo().isAvailable()
@@ -210,9 +224,9 @@ public class Register extends AppCompatActivity {
                 params.put("email", tambah_email.getText().toString());
                 params.put("telepon", tambah_telepon.getText().toString());
                 params.put("tgl_lahir", tambah_tgl_lahir.getText().toString());
-                params.put("jenis_kelamin",  String.valueOf(tambah_jenis_kelamin.getSelectedItem()));
+                params.put("jenis_kelamin",  tambah_jenis_kelamin.getSelectedItem().toString());
                 params.put("tahun_lulus", tambah_tahun_lulus.getText().toString());
-                params.put("role_id", String.valueOf(2));
+                params.put("role_id", String.valueOf(3));
 
                 return params;
             }

@@ -7,9 +7,26 @@
     android:orientation="vertical"
     tools:context=".DetailLowongan">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:theme="@style/ToolBarStyle">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,26 +59,38 @@
                     android:id="@+id/judul_tampil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Marketing dan Pemasaran"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/darkgrey"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="5dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/img_detail_lowongan"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_margin="0dp"
-                        android:src="@drawable/ic_business_black" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:civ_border_color="#fff"
+                        app:civ_border_width="2dp"
+                        tools:srcCompat="@drawable/ic_business_black" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -69,59 +98,148 @@
                         android:layout_gravity="center_horizontal"
                         android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txt2l"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:text="Nama Industri :"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp">
 
-                    <TextView
-                        android:id="@+id/nama_industri_tampil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="0dp"
-                        android:text="Nama Industri"
-                        android:textSize="16sp" />
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/ic_business_black"
+                                android:layout_gravity="center"
+                                android:layout_margin="3dp"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:text="Alamat Industri :"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Nama Perusahaan : "-->
+                                <!--android:textSize="13sp"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:layout_gravity="center"/>-->
 
-                    <TextView
-                        android:id="@+id/alamat_industri_tampil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="0dp"
-                        android:text="Alamat Industri"
-                        android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/nama_industri_tampil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:text="Nama Industri"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="7dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/ic_location_on"
+                                android:layout_gravity="center"
+                                android:layout_margin="3dp"/>
+
+                            <!--<TextView-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Alamat : "-->
+                                <!--android:textSize="13sp"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:layout_gravity="center"/>-->
+
+                            <TextView
+                                android:id="@+id/alamat_industri_tampil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:text="Alamat Industri"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
 
                         <Button
                             android:id="@+id/btn_lihat_industri"
-                            android:layout_width="150dp"
-                            android:layout_height="20dp"
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
                             android:background="@drawable/costum_button"
                             android:text="Lihat Industri"
                             android:textColor="#fff"
-                            android:textSize="10dp"/>
+                            android:textSize="10dp"
+                            android:layout_marginLeft="3dp"/>
 
                     </LinearLayout>
                 </LinearLayout>
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/darkgrey"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="5dp"/>
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:src="@drawable/ic_date_range_black"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
+
+                    <TextView
+                        android:id="@+id/txt8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Buka : "
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/buka_tampil"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp">
+                    android:text="Buka"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="19dp"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_date_range_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
                     <TextView
                         android:id="@+id/txt9"
@@ -129,74 +247,192 @@
                         android:layout_height="wrap_content"
                         android:text="Tutup : "
                         android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+            </LinearLayout>
 
                     <TextView
                         android:id="@+id/tutup_tampil"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1 Januari 2020"
+                        android:text="Tutup"
+                        android:textSize="15sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="19dp"/>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/darkgrey"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:src="@drawable/ic_assignment_ind_black"
+                        android:layout_gravity="center"
+                        android:layout_margin="3dp"/>
+
+                    <TextView
+                        android:id="@+id/txt10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bidang Keahlian : "
                         android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/jurusan_tampil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jurusan"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="19dp"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_assignment_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
                 <TextView
                     android:id="@+id/txt3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:text="Gambaran Umum :"
                     android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
 
                 <TextView
                     android:id="@+id/deskripsi_tampil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="macul"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="19dp"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/darkgrey"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_assignment_turned_in_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
                 <TextView
                     android:id="@+id/txt4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:text="Persyaratan Umum :"
                     android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
 
                 <TextView
                     android:id="@+id/kualifikasi_tampil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="19dp"/>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/darkgrey"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_info_black"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"/>
 
                 <TextView
                     android:id="@+id/txt5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:text="Informasi Lain :"
                     android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
 
                 <TextView
                     android:id="@+id/lain_tampil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="19dp"/>
+
+                <!--<TableRow-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.5dp"-->
+                    <!--android:background="@color/darkgrey"-->
+                    <!--android:layout_marginTop="2dp"-->
+                    <!--android:layout_marginBottom="5dp"/>-->
 
                 <FrameLayout
                     android:id="@+id/frame_bawah"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
+                    android:layout_height="80dp"/>
+
+                <FrameLayout
+                    android:id="@+id/frame_bawah2"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:visibility="gone"/>
 
             </LinearLayout>
         </ScrollView>
