@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +36,7 @@ public class Login extends AppCompatActivity {
     Button btn_login;
     EditText in_username, in_password;
     Intent intent;
+    TextView isi_daftar,lupa_pass;
 
     int success;
     ConnectivityManager conMgr;
@@ -66,13 +68,25 @@ public class Login extends AppCompatActivity {
         getSupportActionBar();
 
 
-        TextView isi_daftar = (TextView) findViewById(R.id.btn_daftar);
+        isi_daftar = (TextView) findViewById(R.id.btn_daftar);
         isi_daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this,Register.class);
 //                finish();
                 startActivity(intent);
+            }
+        });
+
+        lupa_pass = (TextView) findViewById(R.id.btn_lupa_pass);
+        lupa_pass.setVisibility(View.GONE);
+        lupa_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent webIntent = new Intent(android.content.Intent.ACTION_VIEW);
+                webIntent.setData(Uri.parse("https://api.whatsapp.com/send?phone=6282234724594&text=Assalamu'alaikum...\n\nSaya lupa password akun BKK, bisa minta bantuannya ?"));
+                finish();
+                startActivity(webIntent);
             }
         });
 
@@ -187,6 +201,8 @@ public class Login extends AppCompatActivity {
                         startActivity(intent);
 
                     } else {
+//                       isi_daftar.setVisibility(View.GONE);
+                       lupa_pass.setVisibility(View.VISIBLE);
                         Toast.makeText(getApplicationContext(),
                                 jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
 

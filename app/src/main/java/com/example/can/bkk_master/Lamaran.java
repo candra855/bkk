@@ -37,7 +37,7 @@ import static com.example.can.bkk_master.Login.session_status;
 
 public class Lamaran extends Fragment {
 
-    SwipeRefreshLayout pullToRefresh;
+    private SwipeRefreshLayout pullToRefresh;
     ProgressDialog pDialog;
     private RecyclerView lvstatus;
 
@@ -69,6 +69,8 @@ public class Lamaran extends Fragment {
 
         getActivity().setTitle("BKK SMEKPRI");
 
+        ambilData2();
+
         sharedpreferences = getActivity().getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
@@ -80,9 +82,9 @@ public class Lamaran extends Fragment {
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getActivity().recreate();
-                pullToRefresh.setRefreshing(false);
-                pullToRefresh.setEnabled(isHidden());
+                ambilData2();
+                pullToRefresh.setRefreshing(true);
+//                pDialog.show();
             }
         });
 
@@ -91,58 +93,57 @@ public class Lamaran extends Fragment {
 
         lvstatus = (RecyclerView) view.findViewById(R.id.lvstatus);
         lvstatus.setLayoutManager(llm);
-        list_data = new ArrayList<HashMap<String, String>>();
 
         pDialog = new ProgressDialog(getActivity());
         pDialog.setMessage("Memuat ...");
         pDialog.show();
 
+        return view;
+    }
+
+    private void ambilData2() {
         requestQueue = Volley.newRequestQueue(getActivity());
         stringRequest = new StringRequest(Request.Method.GET, url_status, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                try{
-                    JSONArray dataArray= new JSONArray(response);
+                try {
+                    list_data = new ArrayList<HashMap<String, String>>();
+                    JSONArray dataArray = new JSONArray(response);
 
-                    pDialog.dismiss();
-                    for (int i =0; i<dataArray.length(); i++)
-                    {
+                    for (int i = 0; i < dataArray.length(); i++) {
                         JSONObject json = dataArray.getJSONObject(i);
                         int extraId = Integer.parseInt(getActivity().getIntent().getStringExtra(TAG_ID));
                         int id = json.getInt("id_user");
-                        if (extraId== id )
-                        {
+                        if (extraId == id) {
                             HashMap<String, String> map = new HashMap<String, String>();
                             map.put("id_lamaran", json.getString("id_lamaran"));
                             map.put("id_lowongan", json.getString("id_lowongan"));
                             map.put("judul", json.getString("judul"));
                             map.put("status", json.getString("status"));
+                            map.put("pesan", json.getString("pesan"));
                             map.put("tanggal", json.getString("tanggal"));
+                            map.put("tanggal2", json.getString("tanggal2"));
                             list_data.add(map);
+                            pDialog.dismiss();
+                            pullToRefresh.setRefreshing(false);
                             lamaranAdapter = new LamaranAdapter(getActivity(), list_data);
                             lvstatus.setAdapter(lamaranAdapter);
                         }
 
                     }
-                } catch (JSONException e)
-                {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener()
-        {
-            public void onErrorResponse(VolleyError error)
-            {
+        }, new Response.ErrorListener() {
+            public void onErrorResponse(VolleyError error) {
 //                Log.e(TAG, "Error: " + error.getMessage());
-                Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
         requestQueue.add(stringRequest);
-
-
-        return view;
     }
 
 }

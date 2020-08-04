@@ -39,6 +39,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.example.can.bkk_master.Adapter.BerandaAdapter.TAG_IDL;
 import static com.example.can.bkk_master.Login.my_shared_preferences;
 import static com.example.can.bkk_master.Login.session_status;
 
@@ -49,9 +50,9 @@ public class MainActivity extends AppCompatActivity
     Fragment fragment = null;
 
     TextView txt_id, txt_username,username_user,nama_user;
-    ImageView img_user;
     String id, username,levelU,level,nama,jurusan;
-    String idu,idun,idn,idj;
+    String idu,idun,idn,idj,id_u;
+    ImageView fotoProfile;
     Intent intent;
     SharedPreferences sharedpreferences;
     Boolean session = false;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity
     private StringRequest stringRequest;
 
     String url = Server.URL + "users_tampil.php";
+    String url_foto = Server.URL + "users_foto_tampil.php";
     public final static String TAG = "Profile";
 
     public static final String TAG_ID = "id";
@@ -104,11 +106,9 @@ public class MainActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         username_user = (TextView) headerView.findViewById(R.id.username_user);
         nama_user = (TextView) headerView.findViewById(R.id.nama_user);
-//        img_user = (ImageView) headerView.findViewById(R.id.imageView);
-        username_user.setText(username);
-        nama_user.setText(nama);
-
-//        Picasso.with(this).load("https://1.bp.blogspot.com/-fYa1pg1wHwc/WD5kIS-CGII/AAAAAAAABhA/l4KSJkcr5lYwhEXMpL5Ai-ckgQVaZA5MgCLcB/s1600/CsiEjnzUIAA177d.jpg").into(img_user);
+        fotoProfile = (ImageView) headerView.findViewById(R.id.imageView);
+//        username_user.setText(username);
+//        nama_user.setText(nama);
 
         if (savedInstanceState == null) {
             fragment = new Beranda();
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         cekdatakosong();
+        ambilData();
 
         if(level.equals("2"))
         {
@@ -229,6 +230,58 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.frame_container, fragment)
                 .commit();
         }
+
+    public void ambilData()
+    {
+
+        RequestQueue  requestQueue = Volley.newRequestQueue(MainActivity.this);
+        StringRequest stringRequests =
+                new StringRequest(Request.Method.GET, url_foto, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONArray dataArray= new JSONArray(response);
+
+                            for (int i =0; i<dataArray.length(); i++)
+
+                            {
+
+                                JSONObject obj = dataArray.getJSONObject(i);
+                                int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_ID));
+                                int id = obj.getInt("id");
+                                id_u = obj.getString("id");
+                                if (extraId== id )
+                                {
+                                    username_user.setText("No. KTP "+ obj.getString("username"));
+                                    nama_user.setText(obj.getString("nama"));
+                                    String imagePath = obj.getString("gambar");
+                                    Picasso.with(MainActivity.this)
+                                            .load("http://muslikh.my.id/bkk/image/" + imagePath)
+                                            .placeholder(R.drawable.ic_account_circle_black)
+                                            .error(R.drawable.ic_account_circle_black)
+                                            .fit()
+                                            .into(fotoProfile);
+                                }
+                            }
+                            Log.d(TAG, "onResponse:" + response);
+                        }  catch(
+                                JSONException e)
+
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        username_user.setText(error.getLocalizedMessage());
+
+
+                    }
+                });
+        requestQueue.add(stringRequests);
+    }
 
     public void cekdatakosong()
     {

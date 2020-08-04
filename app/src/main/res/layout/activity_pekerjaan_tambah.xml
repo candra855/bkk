@@ -48,7 +48,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
                     android:hint="Nama Perusahaan"
-                    android:inputType="textPersonName"
+                    android:inputType="textCapWords"
                     android:textSize="16sp" />
 
             </android.support.design.widget.TextInputLayout>

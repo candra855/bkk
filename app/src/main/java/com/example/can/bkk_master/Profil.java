@@ -1,28 +1,18 @@
 package com.example.can.bkk_master;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -33,7 +23,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.can.bkk_master.Adapter.ProfilAdapter;
-import com.example.can.bkk_master.Controller.AppController;
 import com.example.can.bkk_master.Pekerjaan.Pekerjaan;
 import com.example.can.bkk_master.Pendidikan.Pendidikan;
 import com.example.can.bkk_master.Server.Server;
@@ -43,7 +32,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,16 +59,27 @@ public class Profil extends AppCompatActivity {
 
     ListView listView;
     private String[] menu_profil = {
+            "Curriculum Vitae",
             "Data Pribadi",
             "Riwayat Pendidikan",
             "Riwayat Pekerjaan",
-//            "Ganti Password",
+            "Ganti Password",
     };
+
+    private String[] menu_profil2 = {
+            "Lihat Curriculum Vitae, cetak Curriculum Vitae",
+            "No. KTP, nama lengkap, tanggal lahir, jenis kelamin, email, nomor telepon",
+            "Lihat riwayat pendidikan, tambah riwayat pendidikan, ubah riwayat pendidikan",
+            "Lihat riwayat pekerjaan, tambah riwayat pekerjaan, ubah riwayat pekerjaan",
+            "Password lama, password baru",
+    };
+
     private Integer[] logo_menu_profil = {
+            R.drawable.ic_assignment_ind_black,
             R.drawable.ic_account_circle_black,
             R.drawable.ic_school_black,
             R.drawable.ic_work_black,
-//            R.drawable.ic_key_black,
+            R.drawable.ic_key_black,
     };
 
 
@@ -117,7 +116,7 @@ public class Profil extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list_menu_profil);
 
-        ProfilAdapter ProfilMenu = new ProfilAdapter(Profil.this, menu_profil, logo_menu_profil);
+        ProfilAdapter ProfilMenu = new ProfilAdapter(Profil.this, menu_profil,menu_profil2, logo_menu_profil);
         listView.setAdapter(ProfilMenu);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -134,28 +133,31 @@ public class Profil extends AppCompatActivity {
 
                 if (session) {
                     if (position == 0) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Uri.parse("http://muslikh.my.id/bkk/cv_cetak.php?id=")+idu));
+                        startActivity(intent);
+                    } else if (position == 1) {
                         Intent intent = new Intent(Profil.this, DataPribadi.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);
                         intent.putExtra(TAG_JURUSAN, idj);
                         startActivity(intent);
-                    } else if (position == 1) {
+                    } else if (position == 2) {
                         Intent intent = new Intent(Profil.this, Pendidikan.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);
                         intent.putExtra(TAG_JURUSAN, idj);
                         startActivity(intent);
-                    } else if (position == 2) {
+                    } else if (position == 3) {
                         Intent intent = new Intent(Profil.this, Pekerjaan.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);
                         intent.putExtra(TAG_JURUSAN, idj);
                         startActivity(intent);
-                    } else if (position == 3) {
-                        Intent intent = new Intent(Profil.this, UbahPassword.class);
+                    } else if (position == 4) {
+                        Intent intent = new Intent(Profil.this, PasswordLama.class);
                         intent.putExtra(TAG_ID, idu);
                         intent.putExtra(TAG_USERNAME, idn);
                         intent.putExtra(TAG_NAMA, idun);

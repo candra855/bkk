@@ -73,8 +73,25 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
-                    android:inputType="textPersonName"
+                    android:inputType="textCapWords"
                     android:hint="Nama Lengkap"
+                    android:textSize="16sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/ubah_tempat_lahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:inputType="textCapWords"
+                    android:hint="Tempat Lahir"
                     android:textSize="16sp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -182,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
-                    android:inputType="number"
+                    android:focusable="false"
                     android:hint="Jenis Kelamin"
                     android:textSize="16sp"/>
 
@@ -200,6 +217,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
                     android:hint="Jurusan"
+                    android:focusable="false"
                     android:inputType="number"
                     android:textSize="16sp"/>
 
@@ -217,6 +235,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
                     android:inputType="number"
+                    android:focusable="false"
                     android:hint="Tahun Lulus"
                     android:textSize="16sp"/>
 
@@ -267,7 +286,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
-                    android:inputType="text"
+                    android:inputType="textCapWords"
                     android:hint="Keahlian"
                     android:textSize="16sp"/>
 
@@ -278,8 +297,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-7dp"
+                android:layout_marginLeft="3dp"
                 android:text="Jika lebih dari 1 pisahkan dengan tanda koma."
-                android:textSize="10sp" />
+                android:textSize="9sp" />
 
             <!--<android.support.design.widget.TextInputLayout-->
             <!--android:layout_width="match_parent"-->
@@ -316,7 +336,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
-                    android:inputType="text"
+                    android:inputType="textCapWords"
                     android:hint="Alamat"/>
 
             </android.support.design.widget.TextInputLayout>

@@ -44,7 +44,7 @@ import static com.example.can.bkk_master.Login.session_status;
 public class DataPribadi extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-    private EditText ubah_username,ubah_nama, ubah_jurusan, ubah_email, ubah_telepon, ubah_tgl_lahir, ubah_jenis_kelamin,
+    private EditText ubah_username,ubah_nama,ubah_tempat_lahir, ubah_jurusan, ubah_email, ubah_telepon, ubah_tgl_lahir, ubah_jenis_kelamin,
             ubah_tahun_lulus, ubah_alamat, ubah_keahlian, ubah_tinggi, ubah_berat;
     private TextView up_id,ubah_tv_tgl_lahir;
     //    private Spinner up_sex, up_department_id;
@@ -104,8 +104,10 @@ public class DataPribadi extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
+                String monthStr = month < 10 ? "0"+month : String.valueOf(month);
+                String dayStr = day < 10 ? "0"+day : String.valueOf(day);
                 Log.d(TAG_B, "onDateSet: date: " + year + "/" + month + "/" + day);
-                String date = day + "/" + month + "/" + year;
+                String date = dayStr + "-" + monthStr + "-" + year;
                 ubah_tgl_lahir.setText(date);
             }
         };
@@ -119,6 +121,7 @@ public class DataPribadi extends AppCompatActivity {
         up_id = (TextView) findViewById(R.id.up_id);
         ubah_username = (EditText) findViewById(R.id.ubah_username);
         ubah_nama = (EditText) findViewById(R.id.ubah_nama);
+        ubah_tempat_lahir = (EditText) findViewById(R.id.ubah_tempat_lahir);
         ubah_email = (EditText) findViewById(R.id.ubah_email);
         ubah_telepon = (EditText) findViewById(R.id.ubah_telepon);
         ubah_jenis_kelamin = (EditText) findViewById(R.id.ubah_jenis_kelamin);
@@ -159,6 +162,7 @@ public class DataPribadi extends AppCompatActivity {
                                 String id_u = obj.getString("id");
                                 String username = obj.getString("username");
                                 String nama = obj.getString("nama");
+                                String tempat_lahir = obj.getString("tempat_lahir");
                                 String email = obj.getString("email");
                                 String telepon = obj.getString("telepon");
                                 String jenis_kelamin = obj.getString("jenis_kelamin");
@@ -174,6 +178,7 @@ public class DataPribadi extends AppCompatActivity {
                                     up_id.setText(id_u);
                                     ubah_username.setText(username);
                                     ubah_nama.setText(nama);
+                                    ubah_tempat_lahir.setText(tempat_lahir);
                                     ubah_email.setText(email);
                                     ubah_telepon.setText(telepon);
                                     ubah_jenis_kelamin.setText(jenis_kelamin);
@@ -269,6 +274,7 @@ public class DataPribadi extends AppCompatActivity {
                 map.put("id", up_id.getText().toString());
                 map.put("username", ubah_username.getText().toString());
                 map.put("nama", ubah_nama.getText().toString());
+                map.put("tempat_lahir", ubah_tempat_lahir.getText().toString());
                 map.put("id_jurusan",  ubah_jurusan.getText().toString());
                 map.put("email", ubah_email.getText().toString());
                 map.put("telepon", ubah_telepon.getText().toString());

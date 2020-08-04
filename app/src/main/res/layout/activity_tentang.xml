@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".Tentang">
+    tools:context=".Tentang"
+    android:background="@color/background_utama">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -21,111 +22,128 @@
             app:theme="@style/ToolBarStyle">
 
         </android.support.v7.widget.Toolbar>
+
+
     </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/appbar">
+        android:layout_marginTop="5dp">
 
-        <!--<ImageView-->
-        <!--android:id="@+id/about_logo"-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--tools:src="@mipmap/ic_logo"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_margin="10dp"/>-->
+        <ImageView
+        android:id="@+id/about_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/smk"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/tentang"
             android:textAlignment="center"
-            android:layout_marginBottom="20dp"/>
+            android:textColor="@color/font" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:padding="8dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/ic_location_on"
-                android:layout_marginRight="10dp"/>
+                android:tint="@color/font" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Jl. Pecalukan - Ledug, Prigen - Pasuruan"
-                android:layout_gravity="center"/>
+                android:textColor="@color/font" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:padding="8dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/ic_call_black"
-                android:layout_marginRight="10dp"/>
+                android:tint="@color/font" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="(0343)885332"
-                android:layout_gravity="center"/>
+                android:textColor="@color/font" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:padding="8dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_email_black"
-                android:layout_marginRight="10dp"/>
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_email"
+                android:tint="@color/font" />
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="smkn1_prigen@yahoo.com"
-                android:layout_gravity="center"/>
+                android:textColor="@color/font" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:padding="8dp">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/ic_language_black"
-                android:layout_marginRight="10dp"/>
+                android:tint="@color/font" />
 
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="www.smknprigen.sch.id"
-                android:layout_gravity="center"/>
+                android:textColor="@color/font" />
 
         </LinearLayout>
 
 
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Pendidikan.Pendidikan">
+    tools:context=".Pendidikan.Pendidikan"
+    android:background="@color/background_utama">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

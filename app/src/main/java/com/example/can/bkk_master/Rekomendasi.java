@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ import static com.example.can.bkk_master.Login.session_status;
 
 public class Rekomendasi extends Fragment {
 
-    SwipeRefreshLayout pullToRefresh;
+    private SwipeRefreshLayout pullToRefresh;
     ProgressDialog pDialog;
     private RecyclerView lvlowongan;
 
@@ -58,6 +59,7 @@ public class Rekomendasi extends Fragment {
 
     String id, username,nama,jurusan;
     String idu,idun,idn,idj;
+    TextView hitung,rekom;
 
     private static final String TAG = Rekomendasi.class.getSimpleName();
 
@@ -78,6 +80,8 @@ public class Rekomendasi extends Fragment {
         getActivity().setTitle("BKK SMEKPRI");
         setHasOptionsMenu(true);
 
+        ambilData2();
+
         sharedpreferences = getActivity().getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
@@ -89,10 +93,9 @@ public class Rekomendasi extends Fragment {
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getActivity().recreate();
-//                pullToRefresh.setRefreshing(false);
-                pullToRefresh.setEnabled(false);
-                pDialog.show();
+                ambilData2();
+                pullToRefresh.setRefreshing(true);
+//                pDialog.show();
             }
         });
 
@@ -104,32 +107,38 @@ public class Rekomendasi extends Fragment {
         lvlowongan.setVisibility(View.VISIBLE);
         lvlowongan.setHasFixedSize(true);
 
+        hitung = (TextView) view.findViewById(R.id.hitung);
+        hitung.setVisibility(view.GONE);
+
+        rekom = (TextView) view.findViewById(R.id.rekom);
+
         pDialog = new ProgressDialog(getActivity());
         pDialog.setMessage("Memuat ...");
         pDialog.show();
 
-        list_data = new ArrayList<HashMap<String, String>>();
+//        list_data = new ArrayList<HashMap<String, String>>();
 
-//        TextView t = (TextView) view.findViewById(R.id.t);
-//        t.setText(String.valueOf(list_data.size()));
 
+        return view;
+    }
+
+    private void ambilData2() {
         requestQueue = Volley.newRequestQueue(getActivity());
         stringRequest = new StringRequest(Request.Method.GET, url_lowongan, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
 
-                try{
-                    JSONArray dataArray= new JSONArray(response);
+                try {
+                    list_data = new ArrayList<HashMap<String, String>>();
+                    JSONArray dataArray = new JSONArray(response);
 
-                    pDialog.dismiss();
-                    for (int i =0; i<dataArray.length(); i++)
-                    {
+
+                    for (int i = 0; i < dataArray.length(); i++) {
                         JSONObject json = dataArray.getJSONObject(i);
                         int extraId = Integer.parseInt(getActivity().getIntent().getStringExtra(TAG_JURUSAN));
                         int id = json.getInt("id_jurusan");
-                        if (extraId== id )
-                        {
+                        if (extraId == id) {
 
                             HashMap<String, String> map = new HashMap<String, String>();
                             map.put("id_lowongan", json.getString("id_lowongan"));
@@ -141,29 +150,26 @@ public class Rekomendasi extends Fragment {
                             map.put("tutup", json.getString("tutup"));
                             map.put("gambar", json.getString("gambar"));
                             list_data.add(map);
+                            pDialog.dismiss();
+                            pullToRefresh.setRefreshing(false);
                             berandaAdapter = new BerandaAdapter(getActivity(), list_data);
                             lvlowongan.setAdapter(berandaAdapter);
                             berandaAdapter.notifyDataSetChanged();
                         }
                     }
-                } catch (JSONException e)
-                {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener()
-        {
-            public void onErrorResponse(VolleyError error)
-            {
+        }, new Response.ErrorListener() {
+            public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Error: " + error.getMessage());
-                Toast.makeText(getActivity(),error.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
         requestQueue.add(stringRequest);
 
-
-        return view;
     }
 
 //    @Override

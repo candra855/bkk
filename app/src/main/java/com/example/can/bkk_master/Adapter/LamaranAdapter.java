@@ -22,10 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.can.bkk_master.Controller.AppController;
-import com.example.can.bkk_master.DataPribadi;
-import com.example.can.bkk_master.DetailLowongan;
 import com.example.can.bkk_master.DetailLowonganHidden;
-import com.example.can.bkk_master.MainActivity;
 import com.example.can.bkk_master.R;
 import com.example.can.bkk_master.Server.Server;
 
@@ -44,15 +41,20 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
 
     Context context;
     Activity activity;
+    LayoutInflater mInflater;
 
     public final String del = Server.URL +"lamaran_hapus.php";
     public static final String TAG_ID = "id";
     public static final String TAG_IDL = "idl";
     public final static String TAG = "Pekerjaan";
+    public static final String TAG_USERNAME = "username";
+    public static final String TAG_NAMA = "nama";
+    public static final String TAG_JURUSAN = "id_jurusan";
+
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id;
+    String id,username,nama,jurusan;;
 
     ArrayList<HashMap<String ,String >> list_data;
     ArrayList<HashMap<String ,String >>  filterL;
@@ -62,6 +64,7 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
         this.list_data = list_data;
         this.filterL = list_data;
         activity = (Activity) context;
+        mInflater = LayoutInflater.from(context);
     }
     @Override
     public LamaranAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -75,6 +78,9 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
         sharedpreferences = context.getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
+        jurusan = sharedpreferences.getString(TAG_JURUSAN, null);
 
         holder.information_id.setText(list_data.get(position).get("judul"));
         holder.tanggal.setText(list_data.get(position).get("tanggal"));
@@ -88,7 +94,12 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(context);
-                    alert.setMessage("Selamat, lamaran anda diterima. Silahkan lihat informasi lain untuk proses selanjutnya.")
+                    alert.setIcon(R.drawable.ic_email_black);
+                    alert.setTitle("Pesan !");
+                    alert.setMessage(
+                            (list_data.get(position).get("pesan"))+
+                                    ("\n \n \nAdmin | ") +
+                                    (list_data.get(position).get("tanggal2")))
                             .setCancelable(false)
                             .setNegativeButton("Tutup", new DialogInterface.OnClickListener() {
                                 @Override
@@ -108,7 +119,12 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(context);
-                    alert.setMessage("Maaf, lamaran anda ditolak.")
+                    alert.setIcon(R.drawable.ic_email_black);
+                    alert.setTitle("Pesan !");
+                    alert.setMessage(
+                            (list_data.get(position).get("pesan"))+
+                                    ("\n \n \nAdmin | ") +
+                            (list_data.get(position).get("tanggal2")))
                             .setCancelable(false)
                             .setNegativeButton("Tutup", new DialogInterface.OnClickListener() {
                                 @Override
@@ -153,7 +169,8 @@ public class LamaranAdapter extends RecyclerView.Adapter<LamaranAdapter.ViewHold
 //                            notifyDataSetChanged();
 
                                     if (dataObj.getString("message").equals("Sukses")) {
-                                        activity.recreate();
+
+                                       activity.recreate();
 
                                     } else if (dataObj.getString("message").equals("Gagal")) {
                                         activity.recreate();

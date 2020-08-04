@@ -39,7 +39,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-    private EditText tambah_username,tambah_nama,tambah_email,tambah_telepon,tambah_tahun_lulus,tambah_tgl_lahir,tambah_password;
+    private EditText tambah_username,tambah_nama,tambah_tempat_lahir,tambah_email,tambah_telepon,tambah_tahun_lulus,tambah_tgl_lahir,tambah_password;
     private TextView tambah_tv_tgl_lahir;
     private Spinner tambah_jenis_kelamin,tambah_jurusan;
     private Button tambah;
@@ -111,8 +111,10 @@ public class Register extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
+                String monthStr = month < 10 ? "0"+month : String.valueOf(month);
+                String dayStr = day < 10 ? "0"+day : String.valueOf(day);
                 Log.d(TAG_B, "onDateSet: date: " + day + "/" + month + "/" + year);
-                String date = day + "/" + month + "/" + year;
+                String date = dayStr + "-" + monthStr + "-" + year;
                 tambah_tv_tgl_lahir.setText(date);
             }
         };
@@ -120,6 +122,7 @@ public class Register extends AppCompatActivity {
         tambah_tv_tgl_lahir = (TextView) findViewById(R.id.tambah_tgl_lahir);
         tambah_username = (EditText) findViewById(R.id.tambah_username);
         tambah_nama = (EditText) findViewById(R.id.tambah_nama);
+        tambah_tempat_lahir = (EditText) findViewById(R.id.tambah_tempat_lahir);
         tambah_email = (EditText) findViewById(R.id.tambah_email);
         tambah_telepon = (EditText) findViewById(R.id.tambah_telepon);
         tambah_password = (EditText) findViewById(R.id.tambah_password);
@@ -148,6 +151,7 @@ public class Register extends AppCompatActivity {
                 String username = tambah_username.getText().toString();
                 String password = tambah_password.getText().toString();
                 String nama = tambah_nama.getText().toString();
+                String tempat_lahir = tambah_tempat_lahir.getText().toString();
                 String email = tambah_email.getText().toString();
                 String telepon = tambah_telepon.getText().toString();
                 String jenis_kelamin = String.valueOf(tambah_jenis_kelamin.getSelectedItem());
@@ -159,14 +163,14 @@ public class Register extends AppCompatActivity {
                 if (conMgr.getActiveNetworkInfo() != null
                         && conMgr.getActiveNetworkInfo().isAvailable()
                         && conMgr.getActiveNetworkInfo().isConnected()) {
-                    checkRegister(username, password, nama, email, telepon, jenis_kelamin, tahun_lulus, jurusan, tgl_lahir, role_id);
+                    checkRegister(username, password, nama,tempat_lahir, email, telepon, jenis_kelamin, tahun_lulus, jurusan, tgl_lahir, role_id);
                 } else {
                     Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-    private void checkRegister(final String username, final String password, final String nama, String email, String telepon, String jenis_kelamin, String tahun_lulus, String department_id, String tgl_lahir, String role_id) {
+    private void checkRegister(final String username, final String password, final String nama,final String tempat_lahir, String email, String telepon, String jenis_kelamin, String tahun_lulus, String department_id, String tgl_lahir, String role_id) {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
         pDialog.setMessage("Register ...");
@@ -220,6 +224,7 @@ public class Register extends AppCompatActivity {
                 params.put("username", tambah_username.getText().toString());
                 params.put("password", tambah_password.getText().toString());
                 params.put("nama", tambah_nama.getText().toString());
+                params.put("tempat_lahir", tambah_tempat_lahir.getText().toString());
                 params.put("id_jurusan",  String.valueOf(tambah_jurusan.getSelectedItemPosition()));
                 params.put("email", tambah_email.getText().toString());
                 params.put("telepon", tambah_telepon.getText().toString());
@@ -227,6 +232,7 @@ public class Register extends AppCompatActivity {
                 params.put("jenis_kelamin",  tambah_jenis_kelamin.getSelectedItem().toString());
                 params.put("tahun_lulus", tambah_tahun_lulus.getText().toString());
                 params.put("role_id", String.valueOf(3));
+                params.put("gambar", "user.jpg");
 
                 return params;
             }
@@ -257,4 +263,5 @@ public class Register extends AppCompatActivity {
 //    {
 //
 //    }
+
 }

@@ -46,7 +46,7 @@ public class DetailLowongan extends AppCompatActivity {
     ProgressDialog pDialog;
 
     final String url = Server.URL + "lowongan_tampil.php";
-    final String cek = Server.URL + "cek_tombol_lamaran.php";
+    final String cek = Server.URL + "tes.php";
     private static String kirim = Server.URL + "lamaran_tambah.php";
 
     TextView id_lowongan,id_industri,judul_tampil,deskripsi_tampil,jurusan_tampil,tutup_tampil,kualifikasi_tampil,lain_tampil,buka_tampil,nama_tampil,alamat_tampil;
@@ -58,7 +58,7 @@ public class DetailLowongan extends AppCompatActivity {
     public final static String TAG_ID = "id";
     public final static String TAG_MESSAGE = "message";
 
-    String id,idu,idi;
+    String id,idu,idi,id_u;
     Boolean session = false;
     RequestQueue requestQueue;
     SharedPreferences sharedpreferences;
@@ -152,10 +152,11 @@ public class DetailLowongan extends AppCompatActivity {
                                 JSONObject obj = dataArray.getJSONObject(i);
                                 int extraId = Integer.parseInt(getIntent().getStringExtra(TAG_IDL));
                                 int id = obj.getInt("id_lowongan");
-                                String id_u = obj.getString("id_lowongan");
+                                id_u = obj.getString("id_lowongan");
 
                                 if (extraId== id )
                                 {
+                                    cek();
                                     id_lowongan.setText(id_u);
                                     judul_tampil.setText(obj.getString("judul"));
                                     deskripsi_tampil.setText(obj.getString("deskripsi"));
@@ -211,6 +212,10 @@ public class DetailLowongan extends AppCompatActivity {
                     if (code == 1)
                     {
                          recreate();
+                        simpan.setVisibility(View.GONE);
+                        frame_button.setVisibility(View.GONE);
+                        frame_bawah.setVisibility(View.GONE);
+                        frame_bawah2.setVisibility(View.VISIBLE);
                     }else if(code == 0)
                     {
 //                        recreate();
@@ -255,6 +260,54 @@ public class DetailLowongan extends AppCompatActivity {
 
         AppController.getInstance().addToRequestQueue(stringRequest);
     }
+
+    public void cek()
+    {
+        RequestQueue  requestQueue = Volley.newRequestQueue(this.getApplicationContext());
+        StringRequest stringRequests =
+                new StringRequest(Request.Method.GET, cek+"?id_user="+id+"&id_lowongan="+id_u, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject dataObj = new JSONObject(response);
+
+
+                            int code = Integer.parseInt(dataObj.getString("code"));
+
+                            if(code == 0)
+                            {
+                                simpan.setVisibility(View.GONE);
+                                frame_button.setVisibility(View.GONE);
+                                frame_bawah.setVisibility(View.GONE);
+                                frame_bawah2.setVisibility(View.VISIBLE);
+                            }else if(code == 1) {
+
+                                simpan.setVisibility(View.VISIBLE);
+                                frame_button.setVisibility(View.VISIBLE);
+                                frame_bawah.setVisibility(View.VISIBLE);
+                                frame_bawah2.setVisibility(View.GONE);
+                            }
+
+                            Toast.makeText(DetailLowongan.this, dataObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
+                            // adapter.notifyDataSetChanged();
+
+                        } catch (JSONException e) {
+                            // JSON error
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        judul_tampil.setText(error.getLocalizedMessage());
+
+
+                    }
+                });
+        requestQueue.add(stringRequests);
+    }
+
     @Override
     public void onResume() {
         super.onResume();

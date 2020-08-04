@@ -628,6 +628,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color background_utama
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -663,8 +664,10 @@ color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color font
 color foreground_material_dark
 color foreground_material_light
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1043,6 +1046,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_border
 drawable costum_button
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1062,6 +1066,7 @@ drawable ic_check
 drawable ic_clear_black_24dp
 drawable ic_create
 drawable ic_date_range_black
+drawable ic_email
 drawable ic_email_black
 drawable ic_exit_to_app
 drawable ic_get_app_black
@@ -1077,7 +1082,6 @@ drawable ic_listmenu
 drawable ic_location_city_black
 drawable ic_location_on
 drawable ic_menu_slideshow
-drawable ic_message
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1126,6 +1130,7 @@ id Tablet
 id ZoomIn
 id ZoomOut
 id ZoomOutSlide
+id about_logo
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1161,15 +1166,17 @@ id beginning
 id beranda
 id blocking
 id bottom
+id btn_cek
 id btn_daftar
 id btn_kirim
 id btn_lihat_industri
 id btn_login
+id btn_lupa_pass
+id btn_password
 id btn_register
 id btn_tambahpekerjaan
 id btn_tambahpendidikan
 id btn_ubah_users
-id btn_ubahpassword
 id btn_ubahpekerjaan
 id btn_ubahpendidikan
 id buka_tampil
@@ -1215,6 +1222,7 @@ id direct
 id disableHome
 id drawer_layout
 id edit_query
+id email
 id email_industri
 id end
 id end_padder
@@ -1231,6 +1239,7 @@ id filled
 id fixed
 id forever
 id foto_profil
+id frame
 id frame_bawah
 id frame_bawah2
 id frame_button
@@ -1242,6 +1251,7 @@ id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
+id hitung
 id home
 id homeAsUp
 id icon
@@ -1252,6 +1262,7 @@ id id_lowongan
 id ifRoom
 id image
 id imageView
+id imageView2
 id image_user
 id img_date
 id img_department
@@ -1312,6 +1323,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id password
 id percent
 id perusahaan
 id pesan
@@ -1322,6 +1334,7 @@ id progress_horizontal
 id pullToRefresh
 id radio
 id rect
+id rekom
 id rekomendasi
 id right
 id right_icon
@@ -1386,6 +1399,7 @@ id tambah_nama
 id tambah_password
 id tambah_tahun_lulus
 id tambah_telepon
+id tambah_tempat_lahir
 id tambah_tempatpekerjaan
 id tambah_tgl_lahir
 id tambah_tingkatpendidikan
@@ -1406,7 +1420,6 @@ id textView16
 id textView17
 id textView18
 id textView19
-id textView2
 id textView20
 id textView21
 id textView22
@@ -1451,7 +1464,8 @@ id txt4_list3
 id txt5
 id txt8
 id txt9
-id txthewan
+id txtmenu
+id txtmenu2
 id ubah_alamat
 id ubah_berat
 id ubah_email
@@ -1460,15 +1474,13 @@ id ubah_jenis_kelamin
 id ubah_jurusan
 id ubah_keahlian
 id ubah_keluarpekerjaan
-id ubah_konf_pass
 id ubah_luluspendidikan
 id ubah_masukpekerjaan
 id ubah_masukpendidikan
 id ubah_nama
-id ubah_pass_baru
-id ubah_pass_lama
 id ubah_tahun_lulus
 id ubah_telepon
+id ubah_tempat_lahir
 id ubah_tempatpekerjaan
 id ubah_tgl_lahir
 id ubah_tinggi
@@ -1477,12 +1489,14 @@ id ubah_username
 id uniform
 id unlabeled
 id up
+id up_email
 id up_id
 id up_idp
 id up_idpekerjaan
 id up_idpendidikan
 id upload
 id useLogo
+id username
 id username_user
 id view_offset_helper
 id visible
@@ -1543,6 +1557,8 @@ layout activity_detail_lowongan
 layout activity_foto_profil
 layout activity_login
 layout activity_main
+layout activity_password
+layout activity_password_lupa
 layout activity_pekerjaan
 layout activity_pekerjaan_tambah
 layout activity_pekerjaan_ubah
@@ -1551,8 +1567,8 @@ layout activity_pendidikan_tambah
 layout activity_pendidikan_ubah
 layout activity_profil
 layout activity_register
+layout activity_splash_screen
 layout activity_tentang
-layout activity_ubah_password
 layout app_bar_main
 layout content_main
 layout costumlist_1
@@ -1606,12 +1622,17 @@ layout support_simple_spinner_dropdown_item
 menu activity_main_drawer
 menu main
 menu upload_menu
-mipmap background
+mipmap background_login2
+mipmap background_real2
+mipmap background_splash
+mipmap camera
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_logo
 mipmap ic_logo1
-mipmap ic_logo2
+mipmap ic_logo3
+mipmap logo3
+mipmap smk
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
