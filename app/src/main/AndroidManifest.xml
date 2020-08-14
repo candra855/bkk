@@ -44,9 +44,6 @@
         <activity android:name=".PasswordBaru" />
         <activity android:name=".FotoProfil" />
         <activity android:name=".FotoIndustri" />
-        <activity android:name=".PasswordLupa"/>
-        <activity android:name=".PasswordVerif">
-        </activity>
 
     </application>
 

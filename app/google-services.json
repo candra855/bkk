@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "209192414358",
+    "firebase_url": "https://bkk-smekpri-cf9fb.firebaseio.com",
+    "project_id": "bkk-smekpri-cf9fb",
+    "storage_bucket": "bkk-smekpri-cf9fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209192414358:android:b9b0d092050d28de0c26b7",
+        "android_client_info": {
+          "package_name": "com.example.can.bkk_master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209192414358-d8654v9348gddh53eo0kotiofi7qioo5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKzP0YSrtBVl1yj6Gx5DHgtxIfXGf_TNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209192414358-d8654v9348gddh53eo0kotiofi7qioo5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

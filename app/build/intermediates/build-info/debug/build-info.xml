@@ -2,82 +2,110 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="27"
-    build-mode="HOT_WARM"
+    build-mode="FULL"
     density="xhdpi"
     format="10"
     plugin-version="3.2.0"
-    timestamp="1596539038162"
-    token="8657222351451942473"
-    verifier="COMPATIBLE" >
+    timestamp="1596872602109"
+    token="1398445700392769256"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="10306" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="2369" />
     <task
         name="verifier"
-        duration="0" />
+        duration="1058" />
 
     <artifact
-        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1596538532430"
+        timestamp="1596872602109"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\tes\bkk-master\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1596539038162"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Data UYP\New folder\Smt 8\SKRIPSI\Project\Bursa Kerja Khusus\newmenu2\step6\bkk-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
     </build>
 
 </instant-run>

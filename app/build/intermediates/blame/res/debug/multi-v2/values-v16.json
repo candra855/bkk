@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Data UYP\\New folder\\Smt 8\\SKRIPSI\\Project\\Bursa Kerja Khusus\\newmenu2\\step6\\bkk-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "D:\\Data UYP\\New folder\\Smt 8\\SKRIPSI\\Project\\Bursa Kerja Khusus\\newmenu2\\fcm\\bkk-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Can\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\9bd45e138f895d3288626e15ec29f853\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Can\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\607b0a4a5560bc627ece82a926ad58e3\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Can\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\314415e660efeec7cd71992e46c6a4f0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Can\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\f560d3954267c72f897db2cb80daade9\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
